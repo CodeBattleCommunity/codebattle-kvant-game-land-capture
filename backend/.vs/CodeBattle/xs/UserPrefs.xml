@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{559F2808-F2EF-464E-BC33-C567D7DD460B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/Models/PlayersContext.cs">
     <Files>
-      <File FileName="CodeBattle/Startup.cs" Line="50" Column="29" />
-      <File FileName="CodeBattle/SignalR.cs" Line="10" Column="44" />
-      <File FileName="CodeBattle/package.json" Line="3" Column="24" />
-      <File FileName="CodeBattle/wwwroot/index.html" Line="1" Column="1" />
+      <File FileName="CodeBattle/Models/Players.cs" Line="19" Column="41" />
+      <File FileName="CodeBattle/Models/PlayersContext.cs" Line="13" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
