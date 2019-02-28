@@ -14,3 +14,19 @@
 /home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.pdb
 /home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/bin/Debug/netcoreapp2.1/CodeBattle.Views.dll
 /home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.csproj.CopyComplete
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.csprojAssemblyReference.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.csproj.CoreCompileInputs.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.RazorAssemblyInfo.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.RazorAssemblyInfo.cs
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.AssemblyInfoInputs.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.AssemblyInfo.cs
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.dll
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.pdb
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\bin\Debug\netcoreapp2.1\CodeBattle.deps.json
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\bin\Debug\netcoreapp2.1\CodeBattle.runtimeconfig.json
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\bin\Debug\netcoreapp2.1\CodeBattle.runtimeconfig.dev.json
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\bin\Debug\netcoreapp2.1\CodeBattle.dll
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\bin\Debug\netcoreapp2.1\CodeBattle.pdb
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\bin\Debug\netcoreapp2.1\CodeBattle.Views.dll
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.RazorTargetAssemblyInfo.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\obj\Debug\netcoreapp2.1\CodeBattle.csproj.CopyComplete

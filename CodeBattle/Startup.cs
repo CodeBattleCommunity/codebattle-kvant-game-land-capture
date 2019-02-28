@@ -20,11 +20,6 @@ namespace CodeBattle
                 // Возвращает клиенту детальное описание возникшей ошибки 
                 //(при ее возникновении)
                 hubOptions.EnableDetailedErrors = true;
-
-                // Если в течение этого периода сервер не отправит никаких сообшений,
-                // то автоматически отправляется ping-сообщение для поддержания подключения открытым
-                // (1 minute)
-                hubOptions.KeepAliveInterval = System.TimeSpan.FromMinutes(1); //
             });
         }
 
@@ -45,8 +40,6 @@ namespace CodeBattle
                         options.ApplicationMaxBufferSize = 64;
                         // Максимальный размер буфера в байтах, в который сервер помещает данные для отправки клиенту. (64)
                         options.TransportMaxBufferSize = 64;
-                        // Устанавливает периодичность опроса (1 minute)
-                        options.LongPolling.PollTimeout = System.TimeSpan.FromMinutes(1);
                         // Настраивает транспорт WebSocket.
                         options.Transports = HttpTransportType.LongPolling | HttpTransportType.WebSockets;
                     });
