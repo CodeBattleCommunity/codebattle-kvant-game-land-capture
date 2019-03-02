@@ -10,23 +10,23 @@ namespace CodeBattle.Models
         public int X_Player { get; set; }
         public int Y_Player { get; set; }
 
-        public bool IsBlockX(int x)
+        public bool IsBlockX(int x_block)
         {
             if (x == X_Block) return true;
             else return false;
         }
-        public bool IsBlockY(int y)
+        public bool IsBlockY(int y_block)
         {
             if (y == Y_Block) return true;
             else return false;
         }
 
-        public bool IsPlayerX(int x)
+        public bool IsPlayerX(int x_block)
         {
             if (x == X_Player) return true;
             else return false;
         }
-        public bool IsPlayerY(int y)
+        public bool IsPlayerY(int y_block)
         {
             if (y == Y_Player) return true;
             else return false;
