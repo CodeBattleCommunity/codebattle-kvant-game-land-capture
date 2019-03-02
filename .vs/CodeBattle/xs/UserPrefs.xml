@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{559F2808-F2EF-464E-BC33-C567D7DD460B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/Models/Block.cs">
+    <Files>
+      <File FileName="CodeBattle/Models/Bot.cs" Line="43" Column="18" />
+      <File FileName="CodeBattle/Models/Block.cs" Line="29" Column="42" />
+      <File FileName="CodeBattle/SignalR.cs" Line="4" Column="26" />
+      <File FileName="CodeBattle/Startup.cs" Line="37" Column="51" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CodeBattle PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
