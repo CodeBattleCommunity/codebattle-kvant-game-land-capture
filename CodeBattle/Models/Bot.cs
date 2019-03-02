@@ -16,7 +16,7 @@ namespace CodeBattle.Models
             {
                 return Y_Bot--;
             }
-            return Y_Bot;
+            else return Y_Bot;
         }
         public int Down(int y_bot)
         {
@@ -24,7 +24,7 @@ namespace CodeBattle.Models
             {
                 return Y_Bot++;
             }
-            return Y_Bot;
+            else return Y_Bot;
         }
         public int Left(int x_bot)
         {
@@ -32,7 +32,7 @@ namespace CodeBattle.Models
             {
                 return X_Bot--;
             }
-            return X_Bot;
+            else return X_Bot;
         }
         public int Right(int x_bot)
         {
@@ -40,7 +40,7 @@ namespace CodeBattle.Models
             {
                 return X_Bot++;
             }
-            return X_Bot;
+            else return X_Bot;
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{559F2808-F2EF-464E-BC33-C567D7DD460B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/SignalR.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/Models/Bot.cs">
     <Files>
-      <File FileName="CodeBattle/Models/Bot.cs" Line="15" Column="57" />
-      <File FileName="CodeBattle/Models/Block.cs" Line="25" Column="10" />
+      <File FileName="CodeBattle/Models/Bot.cs" Line="43" Column="18" />
+      <File FileName="CodeBattle/Models/Block.cs" Line="21" Column="31" />
       <File FileName="CodeBattle/SignalR.cs" Line="16" Column="61" />
       <File FileName="CodeBattle/Startup.cs" Line="37" Column="51" />
     </Files>
