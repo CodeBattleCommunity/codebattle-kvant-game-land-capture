@@ -10,33 +10,33 @@ namespace CodeBattle.Models
 
         Block BlockCoord = new Block();
 
-        public int Up(int y)
+        public int Up(int y_bot)
         {
-            if (Y_Bot - 1 != BlockCoord.Y_Block || Y_Bot - 1 != 0)
+            if (BlockCoord.IsBlockY(y_bot - 1) == false)
             {
                 return Y_Bot--;
             }
             return Y_Bot;
         }
-        public int Down(int y)
+        public int Down(int y_bot)
         {
-            if (Y_Bot + 1 != BlockCoord.Y_Block)
+            if (BlockCoord.IsBlockY(y_bot + 1) == false)
             {
                 return Y_Bot++;
             }
             return Y_Bot;
         }
-        public int Left(int x)
+        public int Left(int x_bot)
         {
-            if (X_Bot - 1 != BlockCoord.X_Block || X_Bot - 1 != 0)
+            if (BlockCoord.IsBlockX(x_bot - 1) == false)
             {
                 return X_Bot--;
             }
             return X_Bot;
         }
-        public int Right(int x)
+        public int Right(int x_bot)
         {
-            if (X_Bot + 1 != BlockCoord.X_Block)
+            if (BlockCoord.IsBlockX(x_bot + 1) == false)
             {
                 return X_Bot++;
             }

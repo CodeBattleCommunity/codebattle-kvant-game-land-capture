@@ -18,5 +18,6 @@
 
   <ItemGroup>
     <Compile Remove="DataBase.cs" />
+    <Compile Remove="Models\Terrain.cs" />
   </ItemGroup>
 </Project>
