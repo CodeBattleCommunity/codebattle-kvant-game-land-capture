@@ -19,5 +19,6 @@
   <ItemGroup>
     <Compile Remove="DataBase.cs" />
     <Compile Remove="Models\Terrain.cs" />
+    <Compile Remove="Models\WebMethodAttribute.cs" />
   </ItemGroup>
 </Project>
