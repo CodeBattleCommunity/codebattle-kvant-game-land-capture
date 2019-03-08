@@ -1,0 +1,36 @@
+<html>
+<title>Регистрация</title>
+<head>
+<link rel="stylesheet" type = "text/css" href = "CapturePoint-css.css" >
+<script type="text/javascript" 
+          src="CapturePoint-js.js"></script>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+<table border="2" align = "center" width = "30%" height = "40%">
+<form>
+<tr>
+  <td>Введите Ваш e-mail</td>
+  <td><form name ="registration">
+  <input type="email" required>
+</form></td>
+</tr>
+<tr>
+<td>Пароль</td>
+<td><div id="password"></div>
+<input type="password"></td>
+</tr>
+<tr>
+<td>Потвердите пароль</td>
+<td><div id="password"></div>
+<input type="password"></td></tr>
+<tr>
+<td><form name = "restart" align = "center"><input type = "reset" value = "Сбросить" onclick = "ClearForm(this.form);"></form></td>
+<td><form name = "regist" align = "center"><input type = "button" value = "Регистрация"></form></td>
+</tr>
+</table>
+</form>
+<footer>&copy;Авторы
+</footer>
+</body>
+</html>
