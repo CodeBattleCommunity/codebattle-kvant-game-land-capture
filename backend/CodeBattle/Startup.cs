@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CodeBattle.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CodeBattle
@@ -16,6 +18,8 @@ namespace CodeBattle
                 //(при ее возникновении)
                 hubOptions.EnableDetailedErrors = true;
             });
+            services.AddScoped<PlayerService>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

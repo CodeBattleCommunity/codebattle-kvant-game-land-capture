@@ -7,6 +7,9 @@
   <ItemGroup>
     <Folder Include="wwwroot\js\" />
     <Folder Include="Models\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,5 +23,8 @@
     <Compile Remove="DataBase.cs" />
     <Compile Remove="Models\Terrain.cs" />
     <Compile Remove="Models\WebMethodAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\index.html" />
   </ItemGroup>
 </Project>

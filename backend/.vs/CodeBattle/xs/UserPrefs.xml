@@ -1,7 +1,12 @@
 ﻿<Properties StartupConfiguration="{559F2808-F2EF-464E-BC33-C567D7DD460B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/Models/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/wwwroot/register.html">
     <Files>
-      <File FileName="CodeBattle/Models/Player.cs" Line="1" Column="1" />
+      <File FileName="CodeBattle/Startup.cs" Line="16" Column="14" />
+      <File FileName="CodeBattle/Services/PlayerService.cs" Line="50" Column="2" />
+      <File FileName="CodeBattle/Models/Player.cs" Line="19" Column="39" />
+      <File FileName="CodeBattle/Controllers/PlayerController.cs" Line="59" Column="9" />
+      <File FileName="CodeBattle/wwwroot/register.html" Line="1" Column="1" />
+      <File FileName="CodeBattle/wwwroot/js/register.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

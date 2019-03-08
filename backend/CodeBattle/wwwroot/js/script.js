@@ -1,5 +1,5 @@
 const hubConnection = new signalR.HubConnectionBuilder()
-    .withUrl("/signalr") // Где обрабатывается
+    .withUrl("/signalr")
     .build();
 
 hubConnection.start();
