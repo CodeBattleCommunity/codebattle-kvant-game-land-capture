@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{559F2808-F2EF-464E-BC33-C567D7DD460B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeBattle/Controllers/PlayerController.cs">
+    <Files>
+      <File FileName="CodeBattle/Controllers/PlayerController.cs" Line="12" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CodeBattle PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

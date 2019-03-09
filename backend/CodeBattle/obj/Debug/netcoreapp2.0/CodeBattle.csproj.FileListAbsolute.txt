@@ -1,4 +1,0 @@
-C:\Users\student\Documents\codebattle-kvant-game-land-capture\backend\CodeBattle\obj\Debug\netcoreapp2.0\CodeBattle.csprojResolveAssemblyReference.cache
-C:\Users\student\Documents\codebattle-kvant-game-land-capture\backend\CodeBattle\obj\Debug\netcoreapp2.0\CodeBattle.csproj.CoreCompileInputs.cache
-C:\Users\student\Documents\codebattle-kvant-game-land-capture\backend\CodeBattle\obj\Debug\netcoreapp2.0\CodeBattle.AssemblyInfoInputs.cache
-C:\Users\student\Documents\codebattle-kvant-game-land-capture\backend\CodeBattle\obj\Debug\netcoreapp2.0\CodeBattle.AssemblyInfo.cs
