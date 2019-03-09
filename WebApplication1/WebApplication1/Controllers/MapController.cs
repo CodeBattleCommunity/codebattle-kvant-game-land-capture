@@ -16,6 +16,9 @@ namespace WebApplication1.Controllers
         {
             var map = new Map()
             {
+                Height = 640,
+                Width = 480,
+                Index = 1,
                 Point = new Dictionary<int, double>
                 {
                     {1,0.34 },

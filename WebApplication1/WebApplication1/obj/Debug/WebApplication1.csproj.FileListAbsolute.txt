@@ -94,3 +94,13 @@ C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\obj\Debug\WebAp
 C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\DnsClient.dll
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\MongoDB.Bson.dll
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\MongoDB.Driver.Core.dll
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\MongoDB.Driver.dll
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\System.Buffers.dll
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\DnsClient.xml
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\MongoDB.Bson.xml
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\MongoDB.Driver.xml
+C:\Users\LocalAdmin\source\repos\WebApplication1\WebApplication1\bin\MongoDB.Driver.Core.xml

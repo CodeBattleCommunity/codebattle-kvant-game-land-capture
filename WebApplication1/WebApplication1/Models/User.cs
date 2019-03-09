@@ -10,8 +10,13 @@ namespace WebApplication1.Models
     {
         [JsonProperty("username")]
         public string UserName { get; set; }
-
         [JsonProperty("email")]
         public string Email { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
+        [JsonProperty("password")]
+        public string Password { get; set; }
+        [JsonProperty("token")]
+        public string Token { get; set; }
     }
 }
