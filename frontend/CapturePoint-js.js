@@ -24,10 +24,11 @@ $('#registration input[type=email]').on('blur', function () {
     alert('Вы ввели корректный e-mail!');
   }
 });
-function clearForm(oForm) {
-    
-  var elements = oForm.elements; 
-    
-  oForm.reset();
-
+function Regist(){
+	var elem_1 = getElementsById(elem1);
+	var elem_2 = getElementsById(elem2);
+	var e_mail = getElementsById(email);
+	if (elem_1 === null || elem_2 === null || e_mail === null){
+		alert("Пожалуйста, заполните все формы");
+	}
 }

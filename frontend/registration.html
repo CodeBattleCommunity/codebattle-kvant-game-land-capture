@@ -5,28 +5,30 @@
 <script type="text/javascript" 
           src="CapturePoint-js.js"></script>
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		  <script type="text/javascript" 
+          src="demo2.js"></script>
 </head>
 <body>
 <table border="2" align = "center" width = "30%" height = "40%">
 <form>
 <tr>
   <td>Введите Ваш e-mail</td>
-  <td><form name ="registration">
-  <input type="email" required>
-</form></td>
+  <td>
+  <input type="email" id = "email" required>
+</td>
 </tr>
 <tr>
 <td>Пароль</td>
-<td><div id="password"></div>
-<input type="password"></td>
+<td>
+<input type="password" id = "elem1"></td>
 </tr>
 <tr>
 <td>Потвердите пароль</td>
-<td><div id="password"></div>
-<input type="password"></td></tr>
+<td>
+<input type="password" id = "elem2"></td></tr>
 <tr>
-<td><form name = "restart" align = "center"><input type = "reset" value = "Сбросить" onclick = "ClearForm(this.form);"></form></td>
-<td><form name = "regist" align = "center"><input type = "button" value = "Регистрация"></form></td>
+<td><input type = "reset" value = "Сбросить" onclick = "clearForm(oForm);"></td>
+<td><input type = "button" value = "Регистрация" onclick = "Regist();"></td>
 </tr>
 </table>
 </form>
