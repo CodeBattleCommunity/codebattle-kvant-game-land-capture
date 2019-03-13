@@ -1,9 +1,5 @@
-﻿using System;
-using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using System.Diagnostics;
-using MongoDB.Driver;
-using MongoDB.Bson;
 
 namespace CodeBattle
 {

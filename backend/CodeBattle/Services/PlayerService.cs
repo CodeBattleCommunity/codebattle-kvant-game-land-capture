@@ -18,12 +18,12 @@ namespace CodeBattle.Models
 
         public List<Player> Get()
         {
-            return _Player.Find(book => true).ToList();
+            return _Player.Find(player => true).ToList();
         }
 
         public Player Get(string id)
         {
-            return _Player.Find<Player>(book => book.ID == id).FirstOrDefault();
+            return _Player.Find<Player>(player => player.ID == id).FirstOrDefault();
         }
 
         public Player Create(Player player)
@@ -32,19 +32,19 @@ namespace CodeBattle.Models
             return player;
         }
 
-        public void Update(string id, Player bookIn)
+        public void Update(string id, Player playerIn)
         {
-            _Player.ReplaceOne(book => book.ID == id, bookIn);
+            _Player.ReplaceOne(player => player.ID == id, playerIn);
         }
 
-        public void Remove(Player bookIn)
+        public void Remove(Player playerIn)
         {
-            _Player.DeleteOne(book => book.ID == bookIn.ID);
+            _Player.DeleteOne(player => player.ID == playerIn.ID);
         }
 
         public void Remove(string id)
         {
-            _Player.DeleteOne(book => book.ID == id);
+            _Player.DeleteOne(player => player.ID == id);
         }
     }
 }

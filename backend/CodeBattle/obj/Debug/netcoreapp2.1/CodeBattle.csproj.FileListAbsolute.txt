@@ -12,3 +12,17 @@
 /home/egor/Рабочий стол/Новая папка/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.RazorTargetAssemblyInfo.cache
 /home/egor/Рабочий стол/Новая папка/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.dll
 /home/egor/Рабочий стол/Новая папка/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.pdb
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/bin/Debug/netcoreapp2.1/CodeBattle.deps.json
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/bin/Debug/netcoreapp2.1/CodeBattle.runtimeconfig.json
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/bin/Debug/netcoreapp2.1/CodeBattle.runtimeconfig.dev.json
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/bin/Debug/netcoreapp2.1/CodeBattle.dll
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/bin/Debug/netcoreapp2.1/CodeBattle.pdb
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.csprojAssemblyReference.cache
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.csproj.CoreCompileInputs.cache
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.RazorAssemblyInfo.cache
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.RazorAssemblyInfo.cs
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.AssemblyInfoInputs.cache
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.AssemblyInfo.cs
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.RazorTargetAssemblyInfo.cache
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.dll
+/home/egor/Рабочий стол/codebattle-kvant-game-land-capture/backend/CodeBattle/obj/Debug/netcoreapp2.1/CodeBattle.pdb
