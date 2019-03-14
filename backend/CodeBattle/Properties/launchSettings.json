@@ -1,6 +1,6 @@
 ﻿{
   "ConnectionStrings": {
-    "BookstoreDb": "mongodb://localhost:27017"
+    "CodeBattle": "mongodb://localhost:27017"
   },
   "iisSettings": {
     "windowsAuthentication": false, 
