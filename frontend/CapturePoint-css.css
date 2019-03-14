@@ -1,0 +1,31 @@
+body{
+	background:url(light-veneer.png) 100%;
+}
+h1.heading{
+	font-size: 720%;
+	color: #1A237E;
+	font-family: Comic Sans MS;
+}
+footer{
+	position: fixed; 
+    left: 0; bottom: 0; 
+    padding: 10px; 
+    background: gray; 
+    color: #fff; 
+    width: 100%; 
+}
+p{
+	color: green;
+	font-family: Arial;
+}
+table.reg{
+	
+}
+tr{
+	background: green;
+	color: yellow;
+}
+div#password
+{
+    position: absolute;
+}
