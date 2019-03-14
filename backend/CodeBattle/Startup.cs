@@ -1,6 +1,7 @@
 ﻿using CodeBattle.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,20 @@ namespace CodeBattle
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddCors(options => options.AddPolicy("CorsPolicy",
+            builder =>
+            {
+                builder.AllowAnyMethod().AllowAnyHeader()
+                       .WithOrigins("http://localhost:5001")
+                       .AllowCredentials();
+            }));
+
             // Инициализация сервиса SignalR
             services.AddSignalR(hubOptions =>
             {
@@ -18,6 +33,7 @@ namespace CodeBattle
                 //(при ее возникновении)
                 hubOptions.EnableDetailedErrors = true;
             });
+
             services.AddScoped<PlayerService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -28,17 +44,23 @@ namespace CodeBattle
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseCors("CorsPolicy");
             app.UseSignalR(routes =>
             {
                 routes.MapHub<SignalR>("/signalr",
                     options => {
-                        // Максимальный размер буфера в байтах, в который сервер помещает получаемые от клиента данные. (64)
-                        options.ApplicationMaxBufferSize = 64;
-                        // Максимальный размер буфера в байтах, в который сервер помещает данные для отправки клиенту. (64)
-                        options.TransportMaxBufferSize = 64;
                         // Настраивает транспорт WebSocket.
                         options.Transports = HttpTransportType.LongPolling | HttpTransportType.WebSockets;
                     });
