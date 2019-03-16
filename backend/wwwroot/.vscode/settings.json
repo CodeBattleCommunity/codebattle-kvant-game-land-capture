@@ -1,0 +1,9 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "src/**/*.js": true,
+    "src/**/*.js.map": true
+  },
+  "files.encoding": "utf8",
+  "files.eol": "auto"
+}

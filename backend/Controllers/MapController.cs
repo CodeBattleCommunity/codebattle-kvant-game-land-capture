@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using WebApplication1.Models;
+﻿using System.Collections.Generic;
 
+using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1.Controllers
+using CodeBattle.PointWar.Server.Models;
+
+namespace CodeBattle.PointWar.Server.Controllers
 {
-    public class MapController : ApiController
+    public class MapController : Controller
     {
         [HttpGet]
-        public IHttpActionResult Get2()
+        public ActionResult<Map> Get2()
         {
             var map = new Map()
             {
@@ -26,7 +23,7 @@ namespace WebApplication1.Controllers
                 }
                 
             };
-            return Json(map);
+            return map;
         }
     }
 }
