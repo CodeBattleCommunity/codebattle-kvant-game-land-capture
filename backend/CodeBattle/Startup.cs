@@ -54,7 +54,6 @@ namespace CodeBattle
             app.UseStaticFiles();
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseCors("CorsPolicy");
             app.UseSignalR(routes =>
