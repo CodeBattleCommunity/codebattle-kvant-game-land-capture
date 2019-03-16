@@ -10,7 +10,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Put the elements back into the container
   elements.forEach(e => container.appendChild(e))
 })
-
-let Score = [];
-Score = document.querySelectorAll('score').textContent;
-console.log(Score);
