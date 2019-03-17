@@ -1,9 +1,6 @@
 {
   "files.autoSave": "afterDelay",
-  "files.exclude": {
-    "src/**/*.js": true,
-    "src/**/*.js.map": true
-  },
   "files.encoding": "utf8",
-  "files.eol": "auto"
+  "files.eol": "auto",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

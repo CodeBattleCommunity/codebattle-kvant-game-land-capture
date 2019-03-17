@@ -6,7 +6,8 @@ import { UserState } from './types';
 import { RootState } from '../types';
 
 export const state: UserState = {
-  username: '',
+  name: 'anonymous',
+  token: '',
 };
 
 const namespaced: boolean = true;

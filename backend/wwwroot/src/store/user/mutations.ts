@@ -3,9 +3,15 @@ import { UserState } from './types';
 
 export const mutations: MutationTree<UserState> = {
   username(state, name) {
-    state.username = name;
+    state.name = name;
   },
   reset(state) {
-    state.username = '';
+    state.name = 'anonymous';
+  },
+  token(state, token) {
+    state.token = token;
+  },
+  resetToken(state) {
+    state.token = '';
   },
 };
