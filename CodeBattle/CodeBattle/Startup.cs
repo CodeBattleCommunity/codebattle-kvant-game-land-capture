@@ -17,15 +17,13 @@ namespace CodeBattle
     {
         public IConfiguration AppConfiguration { get; set; }
 
-        public Startup(IHostingEnvironment env)
+        public Startup()
         {
-            // в атрибуты конструктора
-            //IHostingEnvironment env
-            //Console.WriteLine(env.ContentRootPath);
-            
             var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("conf.json");
+                .AddInMemoryCollection(new Dictionary<string, string>
+                {
+                    {"Connection", "mongodb://localhost:27017"},
+                });
             AppConfiguration = builder.Build();
         }
 
@@ -66,14 +64,8 @@ namespace CodeBattle
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                     name: "MapController",
-                     template: "{controller=Map}");
-                routes.MapRoute(
-                    name: "RegistrationController",
-                    template: "{controller=Reg}");
-                routes.MapRoute(
                     name: "PlayersController",
-                    template: "{controller=Players}");
+                    template: "{controller=Player}");
             });
         }
     }

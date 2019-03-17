@@ -5,10 +5,9 @@ using CodeBattle.Models;
 namespace CodeBattle.Controllers
 {
     [Route("api-v1/[controller]")]
-    [ApiController]
     public class PlayerController : Controller
     {
-        private readonly PlayerService _PlayerService;
+        private readonly PlayerService _PlayerService = new PlayerService();
 
         public PlayerController(PlayerService playerService)
         {
@@ -21,7 +20,7 @@ namespace CodeBattle.Controllers
             return _PlayerService.Get();
         }
 
-        [HttpGet("{id:length(24)}", Name = "GetPlayer")]
+        [HttpGet("{id:max(255)}", Name = "GetPlayer")]
         public ActionResult<Player> Get(string id)
         {
             var player = _PlayerService.Get(id);
@@ -35,14 +34,14 @@ namespace CodeBattle.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Player> Create([FromBody] Player player)
+        public ActionResult<Player> Create(Player player)
         {
             _PlayerService.Create(player);
 
-            return CreatedAtRoute("GetPlayer", new { id = player.ID.ToString() }, player);
+            return player;
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id:max(255)}")]
         public IActionResult Update(string id, Player playerIn)
         {
             var player = _PlayerService.Get(id);
@@ -57,7 +56,7 @@ namespace CodeBattle.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id:max(255)}")]
         public IActionResult Delete(string id)
         {
             var player = _PlayerService.Get(id);

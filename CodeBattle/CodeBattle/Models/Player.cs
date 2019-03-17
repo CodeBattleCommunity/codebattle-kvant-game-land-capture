@@ -6,9 +6,8 @@ namespace CodeBattle.Models
 {
     public class Player
     {
-        [BsonId]
+        [BsonElement("ID")]
         [JsonProperty("id")]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string ID { get; set; }
 
         [JsonProperty("email")]
@@ -22,9 +21,5 @@ namespace CodeBattle.Models
         [JsonProperty("score")]
         [BsonElement("Score")]
         public int Score { get; set; }
-
-        [JsonProperty("api_key")]
-        [BsonElement("API_Key")]
-        public string API_Key { get; set; }
     }
 }

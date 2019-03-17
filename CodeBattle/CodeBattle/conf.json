@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "CodeBattle": "mongodb://localhost:27017"
-  }
-}

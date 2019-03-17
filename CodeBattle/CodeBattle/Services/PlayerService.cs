@@ -1,24 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
+using System.Linq;
+using System.Threading.Tasks;
 using MongoDB.Driver;
+using MongoDB.Bson;
+using Microsoft.Extensions.Configuration;
 
 namespace CodeBattle.Models
 {
+   
+
     public class PlayerService
     {
-        private readonly IMongoCollection<Player> _Player;
+        private IMongoCollection<Player> _Player;
 
-        public PlayerService(IConfiguration config)
+        public PlayerService()
         {
-            //Console.WriteLine(config.GetConnectionString("CodeBattle"));
-            //string connectionString = "mongodb://localhost:27017";
-            
-            MongoClient client = new MongoClient(config.GetConnectionString("CodeBattle"));
-            var database = client.GetDatabase("test");
-            _Player = database.GetCollection<Player>("people");
+            string connectionString = new Startup().AppConfiguration["Connection"];
+            MongoClient client = new MongoClient(connectionString);
+            IMongoDatabase database = client.GetDatabase("test");
+            _Player = database.GetCollection<Player>("player");
         }
 
+        public Player Create(Player player)
+        {
+            _Player.InsertOneAsync(player);
+            return player;
+        }
         public List<Player> Get()
         {
             return _Player.Find(player => true).ToList();
@@ -27,12 +35,6 @@ namespace CodeBattle.Models
         public Player Get(string id)
         {
             return _Player.Find(player => player.ID == id).FirstOrDefault();
-        }
-
-        public Player Create(Player player)
-        {
-            _Player.InsertOneAsync(player);
-            return player;
         }
 
         public void Update(string id, Player playerIn)
