@@ -7,20 +7,20 @@ using CodeBattle.Services;
 namespace CodeBattle.Controllers
 {
     [Route("api-v1/[controller]")]
-    public class PlayerController : Controller
+    public class RegController : Controller
     {
-        private readonly ICodeBattle<Player> _PlayerService = new PlayerService();
+        private readonly ICodeBattle<User> _RegService = new RegService();
 
         [HttpGet]
-        public ActionResult<List<Player>> Get()
+        public ActionResult<List<User>> Get()
         {
-            return _PlayerService.Get();
+            return _RegService.Get();
         }
 
         [HttpGet("{id:max(255)}")]
-        public ActionResult<Player> Get(int id)
+        public ActionResult<User> Get(int id)
         {
-            var player = _PlayerService.Get(id);
+            var player = _RegService.Get(id);
 
             if (player == null)
             {
@@ -31,24 +31,24 @@ namespace CodeBattle.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Player> Create(Player player)
+        public ActionResult<User> Create(User player)
         {
-            _PlayerService.Create(player);
+            _RegService.Create(player);
 
             return player;
         }
 
         [HttpPut("{id:max(255)}")]
-        public IActionResult Update(int id, Player playerIn)
+        public IActionResult Update(int id, User playerIn)
         {
-            var player = _PlayerService.Get(id);
+            var player = _RegService.Get(id);
 
             if (player == null)
             {
                 return NotFound();
             }
 
-            _PlayerService.Update(id, playerIn);
+            _RegService.Update(id, playerIn);
 
             return NoContent();
         }
@@ -56,14 +56,14 @@ namespace CodeBattle.Controllers
         [HttpDelete("{id:max(255)}")]
         public IActionResult Delete(int id)
         {
-            var player = _PlayerService.Get(id);
+            var player = _RegService.Get(id);
 
             if (player == null)
             {
                 return NotFound();
             }
 
-            _PlayerService.Remove(player.ID);
+            _RegService.Remove(player.ID);
 
             return NoContent();
         }

@@ -8,18 +8,18 @@ namespace CodeBattle.Models
     {
         [BsonElement("ID")]
         [JsonProperty("id")]
-        public string ID { get; set; }
+        public int ID { get; }
 
         [JsonProperty("email")]
         [BsonElement("Email")]
-        public string Email { get; set; }
+        public string Email { get; }
 
-        [JsonProperty("password")]
-        [BsonElement("Password")]
-        public string Password { get; set; }
+        [JsonProperty("api_key")]
+        [BsonElement("API_Key")]
+        public string API_Key { get; }
 
         [JsonProperty("score")]
         [BsonElement("Score")]
-        public int Score { get; set; }
+        public int Score { get; }
     }
 }

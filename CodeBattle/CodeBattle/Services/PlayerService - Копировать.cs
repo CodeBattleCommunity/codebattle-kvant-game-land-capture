@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using Microsoft.Extensions.Configuration;
-using CodeBattle.Interfaces;
 
 namespace CodeBattle.Models
 {
+   
 
-
-    public class PlayerService : ICodeBattle<Player>
+    public class PlayerService
     {
         private IMongoCollection<Player> _Player;
 
@@ -20,7 +19,7 @@ namespace CodeBattle.Models
             string connectionString = new Startup().AppConfiguration["Connection"];
             MongoClient client = new MongoClient(connectionString);
             IMongoDatabase database = client.GetDatabase("test");
-            _Player = database.GetCollection<Player>("players");
+            _Player = database.GetCollection<Player>("player");
         }
 
         public Player Create(Player player)
@@ -33,12 +32,12 @@ namespace CodeBattle.Models
             return _Player.Find(player => true).ToList();
         }
 
-        public Player Get(int id)
+        public Player Get(string id)
         {
             return _Player.Find(player => player.ID == id).FirstOrDefault();
         }
 
-        public void Update(int id, Player playerIn)
+        public void Update(string id, Player playerIn)
         {
             _Player.ReplaceOne(player => player.ID == id, playerIn);
         }
@@ -48,7 +47,7 @@ namespace CodeBattle.Models
             _Player.DeleteOne(player => player.ID == playerIn.ID);
         }
 
-        public void Remove(int id)
+        public void Remove(string id)
         {
             _Player.DeleteOne(player => player.ID == id);
         }

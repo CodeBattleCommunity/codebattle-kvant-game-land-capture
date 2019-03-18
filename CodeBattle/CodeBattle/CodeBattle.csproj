@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\PlayersController.cs" />
+    <Compile Remove="Models\Block.cs" />
+    <Compile Remove="Models\Bot.cs" />
+    <Compile Remove="Services\PlayerService - Копировать.cs" />
   </ItemGroup>
 
   <ItemGroup>

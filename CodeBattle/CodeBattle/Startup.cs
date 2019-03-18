@@ -1,4 +1,5 @@
 ﻿using CodeBattle.Models;
+using CodeBattle.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,8 +38,6 @@ namespace CodeBattle
                 //(при ее возникновении)
                 hubOptions.EnableDetailedErrors = true;
             });
-
-            services.AddScoped<PlayerService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -64,8 +63,14 @@ namespace CodeBattle
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "PlayersController",
-                    template: "{controller=Player}");
+                    name: "PlayerController",
+                    template: "api-v1/{controller=Player}");
+                routes.MapRoute(
+                    name: "RegController",
+                    template: "api-v1/{controller=Reg}");
+                routes.MapRoute(
+                    name: "MapController",
+                    template: "api-v1/{controller=Map}");
             });
         }
     }
