@@ -5,7 +5,7 @@ $(document).ready(function() {
     $("div#password").height($("input").outerHeight(false)); 
     
     $("input").keypress(function() {
-        $("div#password").append("<img src=\"" + imgSrc + "\">");
+        $("div#password").append("<img src=\"" + this.imgSrc + "\">");
     });
     
     $("div#password").click(function() {
@@ -25,9 +25,9 @@ $('#registration input[type=email]').on('blur', function () {
   }
 });
 function Regist(){
-	var elem_1 = getElementsById(elem1);
-	var elem_2 = getElementsById(elem2);
-	var e_mail = getElementsById(email);
+	var elem_1 = document.getElementById(elem1);
+	var elem_2 = document.getElementById(elem2);
+	var e_mail = document.getElementById(email);
 	if (elem_1 === null || elem_2 === null || e_mail === null){
 		alert("Пожалуйста, заполните все формы");
 	}
