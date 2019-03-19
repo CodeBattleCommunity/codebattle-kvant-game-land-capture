@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodeBattle.Interfaces
+namespace CodeBattle.PointWar.Server.Interfaces
 {
     public interface ICodeBattle<T>
     {

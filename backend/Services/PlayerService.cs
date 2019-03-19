@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CodeBattle.PointWar.Server.Models;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
-namespace CodeBattle.PointWar.Server.Models
+namespace CodeBattle.PointWar.Server.Services
 {
     public class PlayerService
     {

@@ -4,16 +4,11 @@ using CodeBattle.PointWar.Server.Models;
 
 namespace CodeBattle.PointWar.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class PlayerController : Controller
     {
-        private readonly PlayerService _PlayerService;
-
-        public PlayerController(PlayerService playerService)
-        {
-            _PlayerService = playerService;
-        }
+        private readonly ICodeBattle<Player> _PlayerService = new PlayerService();
 
         [HttpGet]
         public ActionResult<List<Player>> Get()
@@ -21,8 +16,8 @@ namespace CodeBattle.PointWar.Server.Controllers
             return _PlayerService.Get();
         }
 
-        [HttpGet("{id:length(24)}", Name = "GetPlayer")]
-        public ActionResult<Player> Get(string id)
+        [HttpGet("{id:max(24)}")]
+        public ActionResult<Player> Get(int id)
         {
             var player = _PlayerService.Get(id);
 
@@ -39,11 +34,11 @@ namespace CodeBattle.PointWar.Server.Controllers
         {
             _PlayerService.Create(player);
 
-            return CreatedAtRoute("GetPlayer", new { id = player.ID.ToString() }, player);
+            return player;
         }
 
-        [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Player playerIn)
+        [HttpPut("{id:max(24)}")]
+        public IActionResult Update(int id, Player playerIn)
         {
             var player = _PlayerService.Get(id);
 
@@ -57,8 +52,8 @@ namespace CodeBattle.PointWar.Server.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id)
+        [HttpDelete("{id:max(24)}")]
+        public IActionResult Delete(int id)
         {
             var player = _PlayerService.Get(id);
 
@@ -72,4 +67,5 @@ namespace CodeBattle.PointWar.Server.Controllers
             return NoContent();
         }
     }
+
 }

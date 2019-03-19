@@ -6,24 +6,30 @@ using CodeBattle.PointWar.Server.Models;
 
 namespace CodeBattle.PointWar.Server.Controllers
 {
+    [Route("api/v1/[controller]")]
+    [ApiController]
     public class MapController : Controller
     {
-        [HttpGet]
-        public ActionResult<Map> Get2()
+        private readonly MapService _MapService = new MapService();
+
+        // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
+        [HttpPost]
+        public JsonResult Post(Map map)
         {
-            var map = new Map()
+            _MapService.Create(map);
+            return Json(map);
+        }
+
+        [HttpGet("{index:max(50)}")]
+        public ActionResult<Map> Get(int index)
+        {
+            if (index == 0)
             {
-                Height = 640,
-                Width = 480,
-                Index = 1,
-                Point = new Dictionary<int, double>
-                {
-                    {1,0.34 },
-                    {2,0.35 }
-                }
-                
-            };
-            return map;
+                return NoContent();
+            }
+            return _MapService.Get(index);
         }
     }
+
+
 }

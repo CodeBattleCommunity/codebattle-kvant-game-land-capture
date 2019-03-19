@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CodeBattle.PointWar.Server.Models;
 using MongoDB.Driver;
-using MongoDB.Bson;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Configuration;
-using CodeBattle.Interfaces;
 
-namespace CodeBattle.Models
+namespace CodeBattle.PointWar.Server.Services
 {
-
-
     public class MapService
     {
         private IMongoCollection<Map> _Map;
