@@ -13,6 +13,7 @@
             if (x_block == X_Block) return true;
             else return false;
         }
+        
         public bool IsBlockY(int y_block)
         {
             if (y_block == Y_Block) return true;
@@ -24,6 +25,7 @@
             if (x_block == X_Player) return true;
             else return false;
         }
+        
         public bool IsPlayerY(int y_block)
         {
             if (y_block == Y_Player) return true;

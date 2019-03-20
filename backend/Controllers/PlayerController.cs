@@ -15,12 +15,14 @@ namespace CodeBattle.PointWar.Server.Controllers
             _PlayerService = playerService;
         }
 
+        // Вывод списка игроков
         [HttpGet]
         public ActionResult<List<Player>> Get()
         {
             return _PlayerService.Get();
         }
 
+        // Вывод одного игрока
         [HttpGet("{id:length(24)}", Name = "GetPlayer")]
         public ActionResult<Player> Get(string id)
         {
@@ -34,6 +36,7 @@ namespace CodeBattle.PointWar.Server.Controllers
             return player;
         }
 
+        // Добавление пользователя
         [HttpPost]
         public ActionResult<Player> Create(Player player)
         {
@@ -42,6 +45,7 @@ namespace CodeBattle.PointWar.Server.Controllers
             return CreatedAtRoute("GetPlayer", new { id = player.ID.ToString() }, player);
         }
 
+        // Изменение пользователя
         [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, Player playerIn)
         {
@@ -57,6 +61,7 @@ namespace CodeBattle.PointWar.Server.Controllers
             return NoContent();
         }
 
+        // Удаление пользователя
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
