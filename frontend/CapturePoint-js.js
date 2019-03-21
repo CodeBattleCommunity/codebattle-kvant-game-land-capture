@@ -31,4 +31,5 @@ function Regist(){
 	if (elem_1 === null || elem_2 === null || e_mail === null){
 		alert("Пожалуйста, заполните все формы");
 	}
+	
 }
