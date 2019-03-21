@@ -88,7 +88,10 @@ namespace CodeBattle.PointWar.Server.Models
             Y_Point = y_bot;
             X_Point = x_bot;
 
-            await Clients.All.SendAsync("AddPoint", Y_Point, X_Point); // Отправка на frontend
+            if (PointCoord.IsPoint(y_bot, x_bot) == false)
+            {
+                await Clients.All.SendAsync("AddPoint", Y_Point, X_Point); // Отправка на frontend
+            }
         }
     }
 }
