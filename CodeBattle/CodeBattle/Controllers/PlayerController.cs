@@ -8,8 +8,8 @@ namespace CodeBattle.Controllers
 {
     [Route("api-v1/[controller]")]
     public class PlayerController : Controller
-    {
-        private readonly ICodeBattle<Player> _PlayerService = new PlayerService();
+    { //TODO доделать exception timeout
+        private ICodeBattle<Player> _PlayerService = new PlayerService();
 
         [HttpGet]
         public ActionResult<List<Player>> Get()
@@ -50,7 +50,7 @@ namespace CodeBattle.Controllers
 
             _PlayerService.Update(id, playerIn);
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id:max(255)}")]
@@ -65,7 +65,7 @@ namespace CodeBattle.Controllers
 
             _PlayerService.Remove(player.ID);
 
-            return NoContent();
+            return Ok();
         }
     }
 }

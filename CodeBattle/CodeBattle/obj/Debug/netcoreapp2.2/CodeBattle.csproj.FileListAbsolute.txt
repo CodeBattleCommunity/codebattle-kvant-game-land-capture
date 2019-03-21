@@ -11,3 +11,17 @@ C:\Users\LocalAdmin\source\repos\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\C
 C:\Users\LocalAdmin\source\repos\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.pdb
 C:\Users\LocalAdmin\source\repos\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.dll
 C:\Users\LocalAdmin\source\repos\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.pdb
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.deps.json
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.runtimeconfig.json
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.runtimeconfig.dev.json
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.dll
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.pdb
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.csprojAssemblyReference.cache
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.csproj.CoreCompileInputs.cache
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorAssemblyInfo.cache
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorAssemblyInfo.cs
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.AssemblyInfoInputs.cache
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.AssemblyInfo.cs
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorTargetAssemblyInfo.cache
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.dll
+C:\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.pdb

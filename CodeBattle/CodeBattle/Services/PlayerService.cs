@@ -25,22 +25,49 @@ namespace CodeBattle.Models
 
         public Player Create(Player player)
         {
-            _Player.InsertOneAsync(player);
+            try
+            {
+                _Player.InsertOneAsync(player);
+            }
+            catch (TimeoutException)
+            {
+                return null;
+            }
             return player;
         }
         public List<Player> Get()
         {
-            return _Player.Find(player => true).ToList();
+            try
+            {
+                return _Player.Find(player => true).ToList();
+            }
+            catch (TimeoutException)
+            {
+                return null;
+            }
         }
 
         public Player Get(int id)
         {
-            return _Player.Find(player => player.ID == id).FirstOrDefault();
+            try
+            {
+                return _Player.Find(player => player.ID == id).FirstOrDefault();
+            }
+            catch (TimeoutException)
+            {
+                return null;
+            }
         }
 
         public void Update(int id, Player playerIn)
         {
-            _Player.ReplaceOne(player => player.ID == id, playerIn);
+            try
+            {
+                _Player.ReplaceOne(player => player.ID == id, playerIn);
+            }
+            catch (TimeoutException)
+            {
+            }
         }
 
         public void Remove(Player playerIn)

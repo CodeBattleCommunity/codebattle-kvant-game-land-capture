@@ -32,7 +32,14 @@ namespace CodeBattle.Services
 
         public User Get(int id)
         {
-            return _User.Find(player => player.ID == id).FirstOrDefault();
+            try
+            {
+                return _User.Find(player => player.ID == id).FirstOrDefault();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public void Update(int id, User playerIn)

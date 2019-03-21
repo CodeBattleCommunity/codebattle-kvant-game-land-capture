@@ -65,7 +65,7 @@ namespace CodeBattle.Controllers
 
             _RegService.Remove(player.ID);
 
-            return NoContent();
+            return Ok();
         }
     }
 }
