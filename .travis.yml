@@ -1,17 +1,13 @@
+dist: bionic
 language: csharp
-mono: none
-dotnet: 2.2.0
-addons:
-  apt:
-    sources:
-    - sourceline: 'deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main'
-      key_url: 'https://packages.microsoft.com/keys/microsoft.asc'
-    packages:
-    - dotnet-hostfxr-1.0.1
-    - dotnet-sharedframework-microsoft.netcore.app-1.0.5
-    - dotnet-sdk-2.2
+before_install:
+- curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+- sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+- sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main" > /etc/apt/sources.list.d/dotnetdev.list'
+- sudo apt-get update
+- sudo apt-get install dotnet-sdk
 
 script:
-  - dotnet restore ./backend/
-  - dotnet build ./backend/
+- dotnet restore ./backend/
+- dotnet build ./backend/
   
