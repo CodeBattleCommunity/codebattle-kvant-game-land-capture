@@ -3,6 +3,8 @@
 using Microsoft.AspNetCore.Mvc;
 
 using CodeBattle.PointWar.Server.Models;
+using CodeBattle.PointWar.Server.Services;
+using CodeBattle.PointWar.Server.Interfaces;
 
 namespace CodeBattle.PointWar.Server.Controllers
 {
@@ -10,7 +12,12 @@ namespace CodeBattle.PointWar.Server.Controllers
     [ApiController]
     public class MapController : Controller
     {
-        private readonly MapService _MapService = new MapService();
+        private readonly ICodeBattle<Map> _MapService;
+
+        public MapController(ICodeBattle<Map> mapService)
+        {
+            this._MapService = mapService;
+        }
 
         // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
         [HttpPost]

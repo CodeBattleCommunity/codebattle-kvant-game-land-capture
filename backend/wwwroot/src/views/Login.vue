@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-slide-y-transition mode="out-in">  
+    <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         <LoginForm></LoginForm>
       </v-layout>
@@ -9,13 +9,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import LoginForm from '@/components/LoginForm.vue'; // @ is an alias to /src
+import { Component, Vue } from "vue-property-decorator";
+import LoginForm from "@/components/LoginForm.vue"; // @ is an alias to /src
 
 @Component({
   components: {
-    LoginForm,
-  },
+    LoginForm
+  }
 })
 export default class LoginPage extends Vue {}
 </script>

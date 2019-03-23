@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
 namespace CodeBattle.PointWar.Server.Models
@@ -16,7 +17,7 @@ namespace CodeBattle.PointWar.Server.Models
         [JsonProperty("id")]        
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]        
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [BsonElement("Password")]
         [JsonProperty("password")]

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using CodeBattle.PointWar.Server.Models;
+using CodeBattle.PointWar.Server.Interfaces;
+using CodeBattle.PointWar.Server.Services;
 
 namespace CodeBattle.PointWar.Server.Controllers
 {
@@ -8,7 +10,12 @@ namespace CodeBattle.PointWar.Server.Controllers
     [ApiController]
     public class PlayerController : Controller
     {
-        private readonly ICodeBattle<Player> _PlayerService = new PlayerService();
+        private readonly ICodeBattle<Player> _PlayerService;
+
+        public PlayerController(ICodeBattle<Player> playerService)
+        {
+            this._PlayerService = playerService;
+        }
 
         [HttpGet]
         public ActionResult<List<Player>> Get()
@@ -62,7 +69,7 @@ namespace CodeBattle.PointWar.Server.Controllers
                 return NotFound();
             }
 
-            _PlayerService.Remove(player.ID);
+            _PlayerService.Remove(player);
 
             return NoContent();
         }

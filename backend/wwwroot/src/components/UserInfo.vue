@@ -5,22 +5,22 @@
 </template>
 <script>
 export default {
-  name: 'user',
-  data () {
-    return {
-    }
+  name: "user",
+  data() {
+    return {};
   },
   computed: {
-    greeting(){
+    greeting() {
       // get user name from vuex
-      return 'Welcome' + this.$store.state.username;
+      return "Welcome" + this.$store.state.username;
     }
   }
-}
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Interfaces;
 using CodeBattle.PointWar.Server.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
@@ -10,7 +11,7 @@ namespace CodeBattle.PointWar.Server.Services
     {
         private IMongoCollection<User> _User;
 
-        public RegService(IConfiguration config)
+        public RegService([FromServices] IConfiguration config)
         {
             var client = new MongoClient(config.GetConnectionString("CodeBattle"));
             var database = client.GetDatabase("CodeBattle");
@@ -22,29 +23,35 @@ namespace CodeBattle.PointWar.Server.Services
             _User.InsertOneAsync(player);
             return player;
         }
-        List<User> ICodeBattle<User>.Get()
+
+        private List<User> GetGet()
         {
             return _User.Find(player => true).ToList();
         }
 
         public User Get(int id)
         {
-            return _User.Find(player => player.ID == id).FirstOrDefault();
+            return _User.Find(player => player.Id == id).FirstOrDefault();
         }
 
         public void Update(int id, User playerIn)
         {
-            _User.ReplaceOne(player => player.ID == id, playerIn);
+            _User.ReplaceOne(player => player.Id == id, playerIn);
         }
 
         public void Remove(User playerIn)
         {
-            _User.DeleteOne(player => player.ID == playerIn.ID);
+            _User.DeleteOne(player => player.Id == playerIn.Id);
         }
 
         public void Remove(int id)
         {
-            _User.DeleteOne(player => player.ID == id);
+            _User.DeleteOne(player => player.Id == id);
+        }
+
+        public List<User> Get()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -1,15 +1,20 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using CodeBattle.Models;
-using CodeBattle.Interfaces;
-using CodeBattle.Services;
+using CodeBattle.PointWar.Server.Interfaces;
+using CodeBattle.PointWar.Server.Services;
+using CodeBattle.PointWar.Server.Models;
 
 namespace CodeBattle.PointWar.Server.Controllers
 {
     [Route("api/v1/[controller]")]
     public class RegController : Controller
     {
-        private readonly ICodeBattle<User> _RegService = new RegService();
+        private readonly ICodeBattle<User> _RegService;
+
+        public RegController(ICodeBattle<User> regService)
+        {
+            this._RegService = regService;
+        }
 
         [HttpGet]
         public ActionResult<List<User>> Get()
@@ -63,7 +68,7 @@ namespace CodeBattle.PointWar.Server.Controllers
                 return NotFound();
             }
 
-            _RegService.Remove(player.ID);
+            _RegService.Remove(player);
 
             return NoContent();
         }

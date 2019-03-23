@@ -3,6 +3,6 @@ export class Forecast {
     public dateFormatted: Date,
     public temperatureC: number,
     public temperatureF: number,
-    public summary: string,
+    public summary: string
   ) {}
 }

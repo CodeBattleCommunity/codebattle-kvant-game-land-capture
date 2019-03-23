@@ -11,11 +11,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import Counter from '@/components/Counter.vue';
+import { Component, Vue } from "vue-property-decorator";
+import Counter from "@/components/Counter.vue";
 
 @Component({
-  components: { Counter },
+  components: { Counter }
 })
 export default class CounterView extends Vue {}
 </script>
