@@ -22,5 +22,8 @@ namespace CodeBattle.PointWar.Server.Models
 
         [BsonElement("API_Key")]
         public string API_Key { get; set; }
+
+        [BsonElement("Color")]
+        public string Color { get; set; }
     }
 }
