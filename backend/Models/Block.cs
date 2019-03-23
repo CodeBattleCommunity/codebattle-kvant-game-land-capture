@@ -8,28 +8,16 @@
         public int X_Player { get; set; }
         public int Y_Player { get; set; }
 
-        public bool IsBlockX(int x_block)
+        public bool IsBlock(int y_block, int x_block)
         {
-            if (x_block == X_Block) return true;
-            else return false;
-        }
-        
-        public bool IsBlockY(int y_block)
-        {
-            if (y_block == Y_Block) return true;
-            else return false;
+            if (y_block == Y_Block || x_block == X_Block) return true;
+            return false;
         }
 
-        public bool IsPlayerX(int x_block)
+        public bool IsPlayer(int y_point, int x_point)
         {
-            if (x_block == X_Player) return true;
-            else return false;
-        }
-        
-        public bool IsPlayerY(int y_block)
-        {
-            if (y_block == Y_Player) return true;
-            else return false;
+            if (y_point == Y_Player || x_point == X_Player) return true;
+            return false;
         }
     }
 }

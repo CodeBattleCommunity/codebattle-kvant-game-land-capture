@@ -14,7 +14,7 @@ namespace CodeBattle.PointWar.Server.Models
         // Вверх
         public async Task Up(int y_bot, int x_bot)
         {
-            if (BlockCoord.IsBlockY(y_bot - 1) == false)
+            if (BlockCoord.IsBlock(y_bot - 1, x_bot) == false)
             {
                 Y_Bot = y_bot;
                 X_Bot = x_bot;
@@ -31,7 +31,7 @@ namespace CodeBattle.PointWar.Server.Models
         // Вниз
         public async Task Down(int y_bot, int x_bot)
         {
-            if (BlockCoord.IsBlockY(y_bot + 1) == false)
+            if (BlockCoord.IsBlock(y_bot + 1, x_bot) == false)
             {
                 Y_Bot = y_bot;
                 X_Bot = x_bot;
@@ -48,7 +48,7 @@ namespace CodeBattle.PointWar.Server.Models
         //Влево
         public async Task Left(int y_bot, int x_bot)
         {
-            if (BlockCoord.IsBlockX(x_bot - 1) == false)
+            if (BlockCoord.IsBlock(y_bot , x_bot - 1) == false)
             {
                 Y_Bot = y_bot;
                 X_Bot = x_bot;
@@ -65,7 +65,7 @@ namespace CodeBattle.PointWar.Server.Models
         // Вправо
         public async Task Right(int y_bot, int x_bot)
         {
-            if (BlockCoord.IsBlockX(x_bot + 1) == false)
+            if (BlockCoord.IsBlock(y_bot, x_bot + 1) == false)
             {
                 Y_Bot = y_bot;
                 X_Bot = x_bot;

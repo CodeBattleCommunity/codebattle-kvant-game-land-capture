@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace CodeBattle.PointWar.Server.Models
 {
@@ -7,41 +8,18 @@ namespace CodeBattle.PointWar.Server.Models
     {
         public int X_Point { get; set; }
         public int Y_Point { get; set; }
-        
-        public List<Tuple<HashSet<int>>> Points = new List<Tuple<HashSet<int>>>();
+        public string Color { get; set; }
 
-        public IEnumerable<int> GetNeighbors4(int p)
+        public Point(int y_point, int x_point)
         {
-            yield return new Point(X - 1, Y);
-            yield return new Point(X, Y - 1);
-            yield return new Point(X + 1, Y);
-            yield return new Point(X, Y + 1);
+            X_Point = x_point;
+            Y_Point = y_point;
         }
         
-        public IEnumerable<Point> GetNeighbors8(Point p)
+        public bool IsPoint(int y_point, int x_point)
         {
-            yield return new Point(p.X - 1, p.Y);
-            yield return new Point(p.X - 1, p.Y - 1);
-            yield return new Point(p.X, p.Y - 1);
-            yield return new Point(p.X + 1, p.Y - 1);
-            yield return new Point(p.X + 1, p.Y);
-            yield return new Point(p.X + 1, p.Y + 1);
-            yield return new Point(p.X, p.Y + 1);
-            yield return new Point(p.X - 1, p.Y + 1);
-        }
-        
-        private IEnumerable<HashSet<Point>> GetClosedArea(Point lastPoint)
-        {
-            var myState = this[lastPoint];
-            //перебираем пустые точки в округе и пытаемся пробиться из них к краю поля
-            foreach (var n in GetNeighbors4(lastPoint))
-                if (this[n] != myState)
-                {
-                    //ищем замкнутую область
-                    var list = GetClosedArea(n, myState);
-                    if (list != null)//нашли?
-                        yield return list;//возвращаем занятые точки
-                }
+            if (y_point == Y_Point || x_point == X_Point) return true;
+            return false;
         }
     }
 }
