@@ -47,8 +47,6 @@ export default class App extends Vue {
     { title: 'Счетчик', icon: 'touch_app', link: '/counter' },
     { title: 'Пример запроса сервера', icon: 'get_app', link: '/fetch-data' },
     { title: 'О нас', icon: 'face', link: '/about' },
-    { title: 'Login', icon: 'face', link: '/login' },
-    { title: 'User', icon: 'face', link: '/user' },
   ];
 }
 </script>

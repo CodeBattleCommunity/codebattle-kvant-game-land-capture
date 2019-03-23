@@ -4,9 +4,6 @@ import { RootState } from '../types';
 
 export const getters: GetterTree<UserState, RootState> = {
     currentUser(state): string {
-        return state.name;
-    },
-    currentToken(state): string {
-        return state.token;
+        return state.username;
     },
 };

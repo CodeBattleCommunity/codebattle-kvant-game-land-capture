@@ -6,16 +6,17 @@
 <script>
 export default {
   name: 'user',
-  data() {
-    return {};
+  data () {
+    return {
+    }
   },
   computed: {
-    greeting() {
+    greeting(){
       // get user name from vuex
       return 'Welcome' + this.$store.state.username;
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

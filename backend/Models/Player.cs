@@ -1,7 +1,8 @@
-﻿using MongoDB.Bson;
+﻿
+
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Security.Cryptography;
+using Newtonsoft.Json;
 
 namespace CodeBattle.PointWar.Server.Models
 {
@@ -9,18 +10,24 @@ namespace CodeBattle.PointWar.Server.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [JsonProperty("id")]
         public string ID { get; set; }
 
         [BsonElement("Email")]
+        [JsonProperty("email")]
         public string Email { get; set; }
 
         [BsonElement("Password")]
+        [JsonProperty("password")]
         public string Password { get; set; }
 
         [BsonElement("Score")]
+        [JsonProperty("score")]
         public int Score { get; set; }
 
+        
         [BsonElement("API_Key")]
+        [JsonProperty("api_key")]
         public string API_Key { get; set; }
     }
 }

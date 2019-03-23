@@ -4,16 +4,10 @@ import { UserState } from './types';
 import { RootState } from '../types';
 
 export const actions: ActionTree<UserState, RootState> = {
-  updateUser(store, name): any {
+  update(store, name): any {
     store.commit('username', name);
   },
-  resetUser({ commit }): any {
+  reset({ commit }): any {
     commit('reset');
-  },
-  updateToken(store, token): any {
-    store.commit('token', token);
-  },
-  resetToken({ commit }): any {
-    commit('resetToken');
   },
 };

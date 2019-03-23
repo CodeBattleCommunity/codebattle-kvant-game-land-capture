@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using VueCliMiddleware;
 
 using CodeBattle.PointWar.Server.Models;
+using System.Collections.Generic;
+using CodeBattle.PointWar.Server.Services;
+using CodeBattle.PointWar.Server.Interfaces;
 
 namespace CodeBattle.PointWar.Server
 {
@@ -19,6 +22,11 @@ namespace CodeBattle.PointWar.Server
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .AddInMemoryCollection(new Dictionary<string, string>
+                {
+                    {"Connection", "mongodb://localhost:27017"},
+                });
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -52,7 +60,9 @@ namespace CodeBattle.PointWar.Server
                 hubOptions.EnableDetailedErrors = true;
             });
 
-            services.AddScoped<PlayerService>();
+            services.AddScoped<ICodeBattle<Map>, MapService>();
+            services.AddScoped<ICodeBattle<Player>, PlayerService>();
+            services.AddScoped<ICodeBattle<User>, RegService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

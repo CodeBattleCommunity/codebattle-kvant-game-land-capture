@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import LoginForm from '@/components/LoginForm.vue';
+import LoginForm from '@/components/LoginForm.vue'; // @ is an alias to /src
 
 @Component({
   components: {
