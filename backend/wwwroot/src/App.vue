@@ -1,6 +1,14 @@
 <template>
   <v-app>
-    <v-navigation-drawer persistent :mini-variant="false" :clipped="true" v-model="drawer" enable-resize-watcher fixed app>
+    <v-navigation-drawer
+      persistent
+      :mini-variant="false"
+      :clipped="true"
+      v-model="drawer"
+      enable-resize-watcher
+      fixed
+      app
+    >
       <v-list>
         <v-list-tile value="true" v-for="(item, i) in items" :key="i" :to="item.link">
           <v-list-tile-action>
@@ -26,27 +34,25 @@
     <v-footer app>
       <span>&nbsp;Kvantorium & dpankratov.ru&nbsp;&copy;&nbsp;2019</span>
     </v-footer>
-
   </v-app>
 </template>
 
 <script lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
-import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from "@/components/HelloWorld.vue";
+import { Component, Vue } from "vue-property-decorator";
 
 @Component({
-  components: { HelloWorld },
+  components: { HelloWorld }
 })
-
 export default class App extends Vue {
   private drawer: boolean = true;
   private right: boolean = true;
-  private title: string = 'CodeBattle: PointWar';
+  private title: string = "CodeBattle: PointWar";
   private items = [
-    { title: 'Основная', icon: 'home', link: '/' },
-    { title: 'Счетчик', icon: 'touch_app', link: '/counter' },
-    { title: 'Пример запроса сервера', icon: 'get_app', link: '/fetch-data' },
-    { title: 'О нас', icon: 'face', link: '/about' },
+    { title: "Основная", icon: "home", link: "/" },
+    { title: "Счетчик", icon: "touch_app", link: "/counter" },
+    { title: "Пример запроса сервера", icon: "get_app", link: "/fetch-data" },
+    { title: "О нас", icon: "face", link: "/about" }
   ];
 }
 </script>

@@ -1,45 +1,53 @@
-body {margin: 0;
-    height: 100%;
-	
-	
-	background:#6600ff;
-	background:url(2.png) repeat ;	
-	-moz-background-size: 100%;
-	-webkit-background-size: 100%;
-	-o-background-size: 100%;
-	background-size: cover;
+body {
+  margin: 0;
+  height: 100%;
+
+
+  background: #6600ff;
+  background: url(2.png) repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: cover;
 }
+
 #background {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
+  position: fixed;
+  top: 0;
+  left: 0;
 
   /* Preserve aspet ratio */
   min-width: 100%;
   height: 200px;
 }
- 
-body { margin: 0; }
-    { 
 
-	background: url(images/images.jpg) 50% 0 repeat;
-    background: #e2ed9c;
-    }
-.copyright{ 
-     width: 740px; 
-     padding: 0 10px 10px; 
-     margin: auto; 
-     background: url(grad.jpg);
-     background: url(grad.jpg) #000080;
-     }
-.copyright P{ 
-     margin: 0 0 5px 170px; 
-     }
-footer{ 
-     background: url(images/grass.png) 50% 53px no-repeat;
-    
-     overflow: auto; 
-     position: relative;
+body {
+  margin: 0;
+}
+
+  {
+
+  background: url(images/images.jpg) 50% 0 repeat;
+  background: #e2ed9c;
+}
+
+.copyright {
+  width: 740px;
+  padding: 0 10px 10px;
+  margin: auto;
+  background: url(grad.jpg);
+  background: url(grad.jpg) #000080;
+}
+
+.copyright P {
+  margin: 0 0 5px 170px;
+}
+
+footer {
+  background: url(images/grass.png) 50% 53px no-repeat;
+
+  overflow: auto;
+  position: relative;
 }
 
 
@@ -50,30 +58,35 @@ table td {
 }
 
 @media screen and (max-width: 600px) {
-  table 
-  thead {
+  table thead {
     display: none;
   }
+
   table tr {
     border-bottom: 3px solid #ddd;
     display: block;
   }
+
   table td {
     border-bottom: 1px solid #ddd;
     display: block;
     text-align: right;
   }
+
   table td:before {
     content: attr(aria-label);
     float: left;
   }
 }
- TABLE {
-    color: white; /* Цвет текста */
-   }
-   TD, TH {
 
-    padding: 0px; /* Поля вокруг текста */
-   }
-  
-  
+TABLE {
+  color: white;
+  /* Цвет текста */
+}
+
+TD,
+TH {
+
+  padding: 0px;
+  /* Поля вокруг текста */
+}

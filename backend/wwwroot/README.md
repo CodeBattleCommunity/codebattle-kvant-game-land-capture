@@ -20,6 +20,13 @@ npm run build
 npm run lint
 ```
 
+Google in debug mode
+### Linux
+```
+google-chrome --remote-debugging-port=9222
+```
+
 
 TODO:
 - Auth https://github.com/dgrubelic/vue-authenticate
+

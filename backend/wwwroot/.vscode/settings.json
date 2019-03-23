@@ -1,9 +1,17 @@
 {
   "files.autoSave": "afterDelay",
   "files.exclude": {
-    "src/**/*.js": true,
-    "src/**/*.js.map": true
+    // "src/**/*.js": true,
+    // "src/**/*.js.map": true
   },
   "files.encoding": "utf8",
-  "files.eol": "auto"
+  "files.eol": "auto",
+  "eslint.enable": false,
+  "eslint.autoFixOnSave": false,
+  "tslint.typeCheck": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  }
 }
