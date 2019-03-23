@@ -8,7 +8,7 @@ namespace CodeBattle.Controllers
 {
     [Route("api-v1/[controller]")]
     public class PlayerController : Controller
-    { //TODO доделать exception timeout
+    {
         private ICodeBattle<Player> _PlayerService = new PlayerService();
 
         [HttpGet]

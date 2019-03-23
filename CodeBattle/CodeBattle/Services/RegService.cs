@@ -22,8 +22,15 @@ namespace CodeBattle.Services
 
         public User Create(User player)
         {
-            _User.InsertOneAsync(player);
-            return player;
+            try
+            {
+                _User.InsertOneAsync(player);
+                return player;
+            }
+            catch
+            {
+                return null;
+            }
         }
         public List<User> Get()
         {
@@ -44,17 +51,35 @@ namespace CodeBattle.Services
 
         public void Update(int id, User playerIn)
         {
-            _User.ReplaceOne(player => player.ID == id, playerIn);
+            try
+            {
+                _User.ReplaceOneAsync(player => player.ID == id, playerIn);
+            }
+            catch
+            {
+            }
         }
 
         public void Remove(User playerIn)
         {
-            _User.DeleteOne(player => player.ID == playerIn.ID);
+            try
+            {
+                _User.DeleteOneAsync(player => player.ID == playerIn.ID);
+            }
+            catch
+            {
+            }
         }
 
         public void Remove(int id)
         {
-            _User.DeleteOne(player => player.ID == id);
+            try
+            {
+                _User.DeleteOne(player => player.ID == id);
+            }
+            catch
+            {
+            }
         }
     }
 }

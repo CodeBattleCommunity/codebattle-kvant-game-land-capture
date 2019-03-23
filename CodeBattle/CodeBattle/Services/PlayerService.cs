@@ -28,12 +28,12 @@ namespace CodeBattle.Models
             try
             {
                 _Player.InsertOneAsync(player);
+                return player;
             }
-            catch (TimeoutException)
+            catch
             {
                 return null;
             }
-            return player;
         }
         public List<Player> Get()
         {
@@ -41,7 +41,7 @@ namespace CodeBattle.Models
             {
                 return _Player.Find(player => true).ToList();
             }
-            catch (TimeoutException)
+            catch
             {
                 return null;
             }
@@ -53,7 +53,7 @@ namespace CodeBattle.Models
             {
                 return _Player.Find(player => player.ID == id).FirstOrDefault();
             }
-            catch (TimeoutException)
+            catch
             {
                 return null;
             }
@@ -63,21 +63,35 @@ namespace CodeBattle.Models
         {
             try
             {
-                _Player.ReplaceOne(player => player.ID == id, playerIn);
+                _Player.ReplaceOneAsync(player => player.ID == id, playerIn);
             }
-            catch (TimeoutException)
+            catch
             {
             }
         }
 
         public void Remove(Player playerIn)
         {
-            _Player.DeleteOne(player => player.ID == playerIn.ID);
+            try
+            {
+                _Player.DeleteOneAsync(player => player.ID == playerIn.ID);
+            }
+            catch
+            {
+
+            }
         }
 
         public void Remove(int id)
         {
-            _Player.DeleteOne(player => player.ID == id);
+            try
+            {
+                _Player.DeleteOneAsync(player => player.ID == id);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

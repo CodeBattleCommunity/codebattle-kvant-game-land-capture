@@ -26,8 +26,10 @@ namespace CodeBattle.Controllers
             {
                 return NotFound();
             }
-
-            return player;
+            else
+            {
+                return player;
+            }
         }
 
         [HttpPost]

@@ -10,8 +10,6 @@ using CodeBattle.Interfaces;
 
 namespace CodeBattle.Models
 {
-
-
     public class MapService
     {
         private IMongoCollection<Map> _Map;
@@ -26,13 +24,27 @@ namespace CodeBattle.Models
 
         public Map Create(Map map)
         {
-            _Map.InsertOneAsync(map);
-            return map;
+            try
+            {
+                _Map.InsertOneAsync(map);
+                return map;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public Map Get(int index)
         {
-            return _Map.Find(map => map.Index == index).FirstOrDefault();
+            try
+            {
+                return _Map.Find(map => map.Index == index).FirstOrDefault();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
