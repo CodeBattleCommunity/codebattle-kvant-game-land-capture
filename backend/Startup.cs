@@ -102,11 +102,13 @@ namespace CodeBattle.PointWar.Server
       app.UseSpa(spa =>
       {
         spa.Options.SourcePath = "wwwroot";
+#if DEBUG
         if (env.IsDevelopment())
         {
           //spa.UseVueCli(npmScript: "serve", port: 8080, regex: "Compiled ");
           spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
         }
+#endif
       });
     }
   }
