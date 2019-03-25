@@ -81,6 +81,11 @@ table.reg{
 tr{
 	background: green;
 	color: yellow;
+	font-family: Segoe Print;
+}
+tr.main{
+	font-size: 200%;
+	font-family: Segoe Script;
 }
 div#password
 {
