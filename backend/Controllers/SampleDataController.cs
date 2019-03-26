@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace site.Controllers
+namespace CodeBattle.PointWar.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class SampleDataController : Controller
     {
         private static string[] Summaries = new[]

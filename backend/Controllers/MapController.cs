@@ -1,29 +1,42 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Mvc;
 
 using CodeBattle.PointWar.Server.Models;
+using CodeBattle.PointWar.Server.Services;
+using CodeBattle.PointWar.Server.Interfaces;
 
 namespace CodeBattle.PointWar.Server.Controllers
 {
+    [Route("api/v1/[controller]")]
+    [ApiController]
     public class MapController : Controller
     {
-        [HttpGet]
-        public ActionResult<Map> Get2()
+        private readonly ICodeBattle<Map> _MapService;
+
+        public MapController(ICodeBattle<Map> mapService)
         {
-            var map = new Map()
+            this._MapService = mapService;
+        }
+
+        // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
+        [HttpPost]
+        public JsonResult Post(Map map)
+        {
+            _MapService.Create(map);
+            return Json(map);
+        }
+
+        [HttpGet("{index:max(50)}")]
+        public ActionResult<Map> Get(int index)
+        {
+            if (index == 0)
             {
-                Height = 640,
-                Width = 480,
-                Index = 1,
-                Point = new Dictionary<int, double>
-                {
-                    {1,0.34 },
-                    {2,0.35 }
-                }
-                
-            };
-            return map;
+                return NoContent();
+            }
+            return _MapService.Get(index);
         }
     }
+
+
 }

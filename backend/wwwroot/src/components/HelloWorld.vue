@@ -7,17 +7,17 @@
           <em>&mdash;{{ author }}</em>
         </small>
       </footer>
-    </blockquote>    
+    </blockquote>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    quote : String,
-    author: String,
-  },
+    quote: String,
+    author: String
+  }
 };
 </script>
 

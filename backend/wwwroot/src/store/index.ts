@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import Vuex, { StoreOptions } from 'vuex';
-import { RootState } from './types';
-import { counter } from './counter/index';
-import { user } from './user/index';
+import Vue from "vue";
+import Vuex, { StoreOptions } from "vuex";
+import { RootState } from "./types";
+import { counter } from "./counter/index";
+import { user } from "./user/index";
 
 Vue.use(Vuex);
 
@@ -10,12 +10,12 @@ Vue.use(Vuex);
 
 const store: StoreOptions<RootState> = {
   state: {
-    version: '0.0.1', // a simple property
+    version: "0.0.1" // a simple property
   },
   modules: {
     counter,
-    user,
-  },
+    user
+  }
 };
 
 export default new Vuex.Store<RootState>(store);

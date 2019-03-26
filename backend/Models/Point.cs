@@ -1,20 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace CodeBattle.PointWar.Server.Models
 {
     public class Point
     {
+        [JsonProperty("X_Point")]
         public int X_Point { get; set; }
+        [JsonProperty("Y_Point")]
         public int Y_Point { get; set; }
+        [JsonProperty("Color")]
         public string Color { get; set; }
-
-        public Point(int y_point, int x_point)
-        {
-            X_Point = x_point;
-            Y_Point = y_point;
-        }
         
         public bool IsPoint(int y_point, int x_point)
         {
