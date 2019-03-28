@@ -64,13 +64,7 @@ namespace CodeBattle
             {
                 routes.MapRoute(
                     name: "PlayerController",
-                    template: "api-v1/{controller=Player}");
-                routes.MapRoute(
-                    name: "RegController",
-                    template: "api-v1/{controller=Reg}");
-                routes.MapRoute(
-                    name: "MapController",
-                    template: "api-v1/{controller=Map}");
+                    template: "{controller}/{id?}");
             });
         }
     }

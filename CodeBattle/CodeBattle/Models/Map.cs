@@ -17,7 +17,7 @@ namespace CodeBattle.Models
         [JsonProperty("width")]
         public int Width { get; set; }
         
-        [BsonElement("Index")]
+        [BsonId]
         [JsonProperty("index")]
         public int Index { get; set; }
 

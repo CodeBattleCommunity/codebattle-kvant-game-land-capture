@@ -16,7 +16,7 @@ namespace CodeBattle.Controllers
 
         // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
         [HttpPost]
-        public ActionResult Post(Map map)
+        public ActionResult<Map> Post(Map map)
         {
             var map_create =_MapService.Create(map);
             if(map_create == null)
@@ -25,7 +25,7 @@ namespace CodeBattle.Controllers
             }
             else
             {
-                return Json(map);
+                return map;
             }
         }
 

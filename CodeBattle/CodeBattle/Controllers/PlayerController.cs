@@ -17,7 +17,7 @@ namespace CodeBattle.Controllers
             return _PlayerService.Get();
         }
 
-        [HttpGet("{id:max(255)}")]
+        [HttpGet("{id:max(254)}")]
         public ActionResult<Player> Get(int id)
         {
             var player = _PlayerService.Get(id);
@@ -26,16 +26,24 @@ namespace CodeBattle.Controllers
             {
                 return NotFound();
             }
-
-            return player;
+            else
+            {
+                return player;
+            }
         }
 
         [HttpPost]
-        public ActionResult<Player> Create(Player player)
+        public ActionResult<Player> Post(Player player)
         {
-            _PlayerService.Create(player);
-
-            return player;
+            var map_create = _PlayerService.Create(player);
+            if (map_create == null)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return player;
+            }
         }
 
         [HttpPut("{id:max(255)}")]

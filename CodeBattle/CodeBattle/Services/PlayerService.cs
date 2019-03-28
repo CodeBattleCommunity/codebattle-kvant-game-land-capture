@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using Microsoft.Extensions.Configuration;
 using CodeBattle.Interfaces;
+using System;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace CodeBattle.Models
 {
@@ -17,8 +17,7 @@ namespace CodeBattle.Models
 
         public PlayerService()
         {
-            string connectionString = new Startup().AppConfiguration["Connection"];
-            MongoClient client = new MongoClient(connectionString);
+            MongoClient client = new MongoClient(new Startup().AppConfiguration["Connection"]);
             IMongoDatabase database = client.GetDatabase("test");
             _Player = database.GetCollection<Player>("players");
         }

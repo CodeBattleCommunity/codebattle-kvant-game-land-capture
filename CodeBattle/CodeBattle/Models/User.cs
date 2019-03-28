@@ -17,7 +17,7 @@ namespace CodeBattle.Models
         [JsonProperty("email")]
         public string Email { get; }
 
-        [BsonElement("ID")]
+        [BsonId]
         [JsonProperty("id")]
         public int ID { get; }
 
