@@ -93,6 +93,7 @@ div#password
 }
 a{
 	color: red;
+	text-decoration: none; 
 }
 div{
 	color: white;
