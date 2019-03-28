@@ -53,6 +53,7 @@ namespace CodeBattle.PointWar.Server.Controllers
             }
         }
 
+        // Отправка точек
         [HttpGet]
         public ActionResult<Point> GetPoint(){
 
