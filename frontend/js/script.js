@@ -1,5 +1,5 @@
 const hubConnection = new signalR.HubConnectionBuilder()
-    .withUrl("/signalr")
+    .withUrl("/signalr") // Подключение
     .configureLogging(signalR.LogLevel.Information)
     .build();
 

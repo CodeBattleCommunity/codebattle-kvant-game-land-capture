@@ -91,7 +91,7 @@ namespace CodeBattle.PointWar.Server
 
       app.UseSignalR(routes =>
       {
-        routes.MapHub<CommandHub>("/command",
+        routes.MapHub<CommandHub>("/signalr",
                   options =>
               {
                       // Настраивает транспорт WebSocket.
