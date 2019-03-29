@@ -12,8 +12,12 @@ namespace CodeBattle.Controllers
     [Route("api-v1/[controller]")]
     public class MapController : Controller
     {
-        private readonly MapService _MapService = new MapService();
+        private readonly MapService _MapService;
 
+        public MapController(MapService mapService)
+        {
+            _MapService = mapService;
+        }
         // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
         [HttpPost]
         public ActionResult<Map> Post(Map map)

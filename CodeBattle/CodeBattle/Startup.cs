@@ -1,4 +1,5 @@
-﻿using CodeBattle.Models;
+﻿using CodeBattle.Interfaces;
+using CodeBattle.Models;
 using CodeBattle.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,16 +19,11 @@ namespace CodeBattle
     {
         public IConfiguration AppConfiguration { get; set; }
 
-        public Startup()
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-                .AddInMemoryCollection(new Dictionary<string, string>
-                {
-                    {"Connection", "mongodb://localhost:27017"},
-                });
-            AppConfiguration = builder.Build();
+            AppConfiguration = configuration;
         }
-
+       
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting();
@@ -38,7 +34,15 @@ namespace CodeBattle
                 //(при ее возникновении)
                 hubOptions.EnableDetailedErrors = true;
             });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            // конфигурация IOptions
+            services.Configure<_Options>(options =>
+            {
+                options.Connection_str = "mongodb://localhost:27017";
+            });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<MapService>();
+            services.AddScoped<ICodeBattle<Player>, PlayerService>();
+            services.AddScoped<ICodeBattle<User>, RegService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

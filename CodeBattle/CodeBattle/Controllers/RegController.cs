@@ -9,7 +9,12 @@ namespace CodeBattle.Controllers
     [Route("api-v1/[controller]")]
     public class RegController : Controller
     {
-        ICodeBattle<User> _RegService = new RegService();
+        ICodeBattle<User> _RegService;
+
+        public RegController(ICodeBattle<User> userservice)
+        {
+            _RegService = userservice;
+        }
 
         [HttpGet]
         public ActionResult<List<User>> Get()

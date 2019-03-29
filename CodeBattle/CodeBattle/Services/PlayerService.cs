@@ -6,8 +6,10 @@ using CodeBattle.Interfaces;
 using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using CodeBattle.Models;
 
-namespace CodeBattle.Models
+namespace CodeBattle.Services
 {
 
 
@@ -15,9 +17,10 @@ namespace CodeBattle.Models
     {
         private IMongoCollection<Player> _Player;
 
-        public PlayerService()
+        public PlayerService(IOptions<_Options> config)
         {
-            MongoClient client = new MongoClient(new Startup().AppConfiguration["Connection"]);
+            
+            MongoClient client = new MongoClient(config.Value.Connection_str);
             IMongoDatabase database = client.GetDatabase("test");
             _Player = database.GetCollection<Player>("players");
         }

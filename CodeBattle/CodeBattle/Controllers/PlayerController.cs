@@ -9,8 +9,12 @@ namespace CodeBattle.Controllers
     [Route("api-v1/[controller]")]
     public class PlayerController : Controller
     {
-        private ICodeBattle<Player> _PlayerService = new PlayerService();
+        private readonly ICodeBattle<Player> _PlayerService;
 
+        public PlayerController(ICodeBattle<Player> playerService)
+        {
+            _PlayerService = playerService;
+        }
         [HttpGet]
         public ActionResult<List<Player>> Get()
         {

@@ -1,5 +1,6 @@
 ﻿using CodeBattle.Interfaces;
 using CodeBattle.Models;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,9 @@ namespace CodeBattle.Services
     {
         private IMongoCollection<User> _User;
 
-        public RegService()
+        public RegService(IOptions<_Options> config)
         {
-            string connectionString = new Startup().AppConfiguration["Connection"];
-            MongoClient client = new MongoClient(connectionString);
+            MongoClient client = new MongoClient(config.Value.Connection_str);
             IMongoDatabase database = client.GetDatabase("test");
             _User = database.GetCollection<User>("users");
         }

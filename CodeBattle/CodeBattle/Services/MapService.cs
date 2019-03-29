@@ -7,17 +7,18 @@ using MongoDB.Bson;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 using CodeBattle.Interfaces;
+using Microsoft.Extensions.Options;
+using CodeBattle.Models;
 
-namespace CodeBattle.Models
+namespace CodeBattle.Services
 {
     public class MapService
     {
         private IMongoCollection<Map> _Map;
 
-        public MapService()
+        public MapService(IOptions<_Options> config)
         {
-            string connectionString = new Startup().AppConfiguration["Connection"];
-            MongoClient client = new MongoClient(connectionString);
+            MongoClient client = new MongoClient(config.Value.Connection_str);
             IMongoDatabase database = client.GetDatabase("test");
             _Map = database.GetCollection<Map>("maps");
         }
