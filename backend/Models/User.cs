@@ -17,7 +17,7 @@ namespace CodeBattle.PointWar.Server.Models
         [JsonProperty("id")]        
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]        
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [BsonElement("Password")]
         [JsonProperty("password")]
