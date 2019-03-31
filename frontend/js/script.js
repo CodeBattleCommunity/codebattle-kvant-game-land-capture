@@ -1,22 +1,22 @@
 const hubConnection = new signalR.HubConnectionBuilder()
-    .withUrl("/signalr") // РџРѕРґРєР»СЋС‡РµРЅРёРµ
+    .withUrl("/signalr")
     .configureLogging(signalR.LogLevel.Information)
     .build();
 
-hubConnection.on('Up', function (y_bot, x_bot) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (y)
+hubConnection.on('Up', function (y_bot) {
+    // Получаем координаты бота (y)
 });
-hubConnection.on('Down', function (y_bot, x_bot) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (y)
+hubConnection.on('Down', function (y_bot) {
+    // Получаем координаты бота (y)
 });
-hubConnection.on('Left', function (x_bot, x_bot) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (x)
+hubConnection.on('Left', function (x_bot) {
+    // Получаем координаты бота (x)
 });
-hubConnection.on('Right', function (x_bot, x_bot) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (x)
+hubConnection.on('Right', function (x_bot) {
+    // Получаем координаты бота (x)
 });
 hubConnection.on('AddPoint', function (y_point, x_point) {
-    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (y, x). пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    // Получаем координаты бота (y, x). Ставим точку
 });
 
 hubConnection.start().then(function () {

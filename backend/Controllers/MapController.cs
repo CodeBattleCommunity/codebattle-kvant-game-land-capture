@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using CodeBattle.PointWar.Server.Models;
-using CodeBattle.PointWar.Server.Services;
 using CodeBattle.PointWar.Server.Interfaces;
 
 namespace CodeBattle.PointWar.Server.Controllers
@@ -39,7 +37,7 @@ namespace CodeBattle.PointWar.Server.Controllers
         /// Добавление точки в JSON
         /// </summary>
         [HttpPost]
-        public ActionResult<Point> AddPoint(int y_p, int x_p, string _color)
+        public JsonResult AddPoint(int y_p, int x_p, string _color)
         {
             Point JPoint = new Point();
 
@@ -47,9 +45,9 @@ namespace CodeBattle.PointWar.Server.Controllers
             JPoint.X_Point = x_p;
             JPoint.Color = _color;
 
-            if(Point.IsPoint(JPoint.Y_Point, JPoint.X_Point) == false)
+            if(JPoint.IsPoint(JPoint.Y_Point, JPoint.X_Point) == false)
             {
-                JPoint.AddPointJson(JPoint);
+                return Json(JPoint);
             }
         }
 
