@@ -58,6 +58,7 @@ namespace CodeBattle.PointWar.Server
 
       services.AddScoped<ICodeBattle<Map>, MapService>();
       services.AddScoped<ICodeBattle<Player>, PlayerService>();
+      services.AddScoped<ICodeBattle<User>, RegService>();
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -90,7 +91,7 @@ namespace CodeBattle.PointWar.Server
 
       app.UseSignalR(routes =>
       {
-        routes.MapHub<CommandHub>("/command",
+        routes.MapHub<Bot>("/command",
                   options =>
               {
                       // Настраивает транспорт WebSocket.

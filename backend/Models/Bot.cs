@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
 
 namespace CodeBattle.PointWar.Server.Models
 {
@@ -7,90 +8,104 @@ namespace CodeBattle.PointWar.Server.Models
     {
         public int X_Bot { get; set; }
         public int Y_Bot { get; set; }
+        public string PlayerID { get; set; }
 
         Block BlockCoord = new Block();
         Point PointCoord = new Point();
         
         // Вверх
-        public async Task Up(int y_bot, int x_bot)
+        public async Task Up(Player _player, Bot _bot)
         {
-            if (BlockCoord.IsBlock(y_bot - 1, x_bot) == false)
+            Bot bot = new Bot();
+            
+            bot.X_Bot = _bot.X_Bot;
+            bot.Y_Bot = _bot.Y_Bot;
+            bot.PlayerID = _player.ID;
+            
+            if (BlockCoord.IsBlock(bot.Y_Bot--, bot.X_Bot) == false)
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Up", Y_Bot--, X_Bot); // Отправка на frontend
+                bot.Y_Bot--;
+                await Clients.All.SendAsync("Up", bot); // Отправка клиентам
             }
             else
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Up", Y_Bot, X_Bot); // Отправка на frontend
+                await Clients.All.SendAsync("Up", bot); // Отправка клиентам
             }
         }
         
         // Вниз
-        public async Task Down(int y_bot, int x_bot)
+        public async Task Down(Player _player, Bot _bot)
         {
-            if (BlockCoord.IsBlock(y_bot + 1, x_bot) == false)
+            Bot bot = new Bot();
+            
+            bot.X_Bot = _bot.X_Bot;
+            bot.Y_Bot = _bot.Y_Bot;
+            bot.PlayerID = _player.ID;
+            
+            if (BlockCoord.IsBlock(bot.Y_Bot++, bot.X_Bot) == false)
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Down", Y_Bot++, X_Bot); // Отправка на frontend
+                bot.Y_Bot++;
+                await Clients.All.SendAsync("Down", bot); // Отправка клиентам
             }
             else
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Down", Y_Bot, X_Bot); // Отправка на frontend
+                await Clients.All.SendAsync("Down", bot); // Отправка клиентам
             }
         }
         
         //Влево
-        public async Task Left(int y_bot, int x_bot)
+        public async Task Left(Player _player, Bot _bot)
         {
-            if (BlockCoord.IsBlock(y_bot , x_bot - 1) == false)
+            Bot bot = new Bot();
+            
+            bot.X_Bot = _bot.X_Bot;
+            bot.Y_Bot = _bot.Y_Bot;
+            bot.PlayerID = _player.ID;
+            
+            if (BlockCoord.IsBlock(bot.Y_Bot, bot.X_Bot--) == false)
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Left", Y_Bot, X_Bot--); // Отправка на frontend
+                bot.X_Bot--;
+                await Clients.All.SendAsync("Left", bot); // Отправка клиентам
             }
             else
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Left", Y_Bot, X_Bot); // Отправка на frontend
+                await Clients.All.SendAsync("Left", bot); // Отправка клиентам
             }
         }
         
         // Вправо
-        public async Task Right(int y_bot, int x_bot)
+        public async Task Right(Player _player, Bot _bot)
         {
-            if (BlockCoord.IsBlock(y_bot, x_bot + 1) == false)
+            Bot bot = new Bot();
+            
+            bot.X_Bot = _bot.X_Bot;
+            bot.Y_Bot = _bot.Y_Bot;
+            bot.PlayerID = _player.ID;
+            
+            if (BlockCoord.IsBlock(bot.Y_Bot, bot.X_Bot++) == false)
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Right", Y_Bot, X_Bot++); // Отправка на frontend
+                bot.Y_Bot++;
+                await Clients.All.SendAsync("Right", bot); // Отправка клиентам
             }
             else
             {
-                Y_Bot = y_bot;
-                X_Bot = x_bot;
-                await Clients.All.SendAsync("Right", Y_Bot, X_Bot); // Отправка на frontend
+                await Clients.All.SendAsync("Right", bot); // Отправка клиентам
             }
         }
         
         // Поставить точку
-        public async Task AddPoint(int y_bot, int x_bot)
+        public async Task AddPoint(Point _point)
         {
-            int Y_Point = PointCoord.Y_Point;
-            int X_Point = PointCoord.Y_Point;
+            Point point = new Point();
 
-            Y_Point = y_bot;
-            X_Point = x_bot;
+            point.X_Point = _point.X_Point;
+            point.Y_Point = _point.Y_Point;
+            point.PlayerID = _point.PlayerID;
 
-            if (PointCoord.IsPoint(y_bot, x_bot) == false)
+            if (PointCoord.IsPoint(point.Y_Point, point.Y_Point) == false)
             {
-                await Clients.All.SendAsync("AddPoint", Y_Point, X_Point); // Отправка на frontend
+                await Clients.All.SendAsync("AddPoint", point); // Отправка на frontend
+                JsonConvert.SerializeObject(point); // Сериализация точки json
             }
         }
     }

@@ -10,17 +10,13 @@ namespace CodeBattle.PointWar.Server.Models
         public int Y_Point { get; set; }
         [JsonProperty("Color")]
         public string Color { get; set; }
-        public string serialize;
+        [JsonProperty("PlayerID")]
+        public int PlayerID { get; set; }
         
         public bool IsPoint(int y_point, int x_point)
         {
             if (y_point == Y_Point || x_point == X_Point) return true;
             return false;
-        }
-
-        public void AddPointJson(Point obj)
-        {
-            serialize = JsonConvert.SerializeObject(obj);
         }
     }
 }
