@@ -28,11 +28,7 @@ function Regist(){
 	var valid = true;
 	var email_length = document.oForm.email.value.length;
 	var index = 0;
-	/*
-	var elem_1 = document.getElementById(elem1);
-	var elem_2 = document.getElementById(elem2);
-	var e_mail = document.getElementById(email);
-	*/
+	
 	if (document.oForm.elem1.value === "" || document.oForm.elem2.value === "" || document.oForm.email.value === ""){
 		alert("Пожалуйста, заполните все формы");
 		valid = false;
