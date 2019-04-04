@@ -25,11 +25,24 @@ $('#registration input[type=email]').on('blur', function () {
   }
 });
 function Regist(){
+	var valid = true;
+	var email_length = document.oForm.email.value.length;
+	var index = 0;
+	/*
 	var elem_1 = document.getElementById(elem1);
 	var elem_2 = document.getElementById(elem2);
 	var e_mail = document.getElementById(email);
-	if (elem_1 === null || elem_2 === null || e_mail === null){
+	*/
+	if (document.oForm.elem1.value === "" || document.oForm.elem2.value === "" || document.oForm.email.value === ""){
 		alert("Пожалуйста, заполните все формы");
+		valid = false;
 	}
-	
+	else if (document.oForm.elem1.value !== document.oForm.elem2.value){
+		alert("Пароли не совпадают!");
+		valid = false;
+	}
+	/*while (index < email_length){
+		
+	}*/
+	return valid;
 }
