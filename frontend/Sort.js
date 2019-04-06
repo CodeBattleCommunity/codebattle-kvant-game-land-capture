@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   let elements = []
-  let container = document.querySelector('#container')
+  let container = document.querySelector('#content')
   // Add each row to the array
   container.querySelectorAll('.row').forEach(el => elements.push(el))
   // Clear the container
