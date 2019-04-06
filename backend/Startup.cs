@@ -11,6 +11,7 @@ using CodeBattle.PointWar.Server.Models;
 using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Services;
 using CodeBattle.PointWar.Server.Interfaces;
+using CodeBattle.PointWar.Server.Controllers;
 
 namespace CodeBattle.PointWar.Server
 {
@@ -91,7 +92,7 @@ namespace CodeBattle.PointWar.Server
 
       app.UseSignalR(routes =>
       {
-        routes.MapHub<Bot>("/command",
+        routes.MapHub<BotCommands>("/command",
                   options =>
               {
                       // Настраивает транспорт WebSocket.
