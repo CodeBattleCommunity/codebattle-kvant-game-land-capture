@@ -44,7 +44,7 @@ namespace CodeBattle.PointWar.Server
       builder =>
       {
         builder.AllowAnyMethod().AllowAnyHeader()
-                     .WithOrigins("http://localhost:5001")
+                     .WithOrigins("http://localhost:80")
                      .AllowCredentials();
       }));
 
@@ -105,8 +105,8 @@ namespace CodeBattle.PointWar.Server
 #if DEBUG
         if (env.IsDevelopment())
         {
-          //spa.UseVueCli(npmScript: "serve", port: 8080, regex: "Compiled ");
-          spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
+          spa.UseVueCli(npmScript: "serve", port: 80, regex: "Compiled ");
+          //spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
         }
 #endif
       });
