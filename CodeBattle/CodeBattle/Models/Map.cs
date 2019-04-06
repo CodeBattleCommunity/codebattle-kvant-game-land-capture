@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace CodeBattle.Models
 {
@@ -27,6 +28,6 @@ namespace CodeBattle.Models
 
         [BsonElement("Ignore_Point")]
         [JsonProperty("ignore_point")]
-        public Dictionary<int, double> Point { get; set; }
+        public Dictionary<int, int> Point { get; set; }
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CodeBattle.Models;
 using CodeBattle.Services;
 using Microsoft.AspNetCore.Mvc;
+using Json;
+using Microsoft.AspNetCore.Http;
 
 namespace CodeBattle.Controllers
 {
@@ -17,12 +19,15 @@ namespace CodeBattle.Controllers
         public MapController(MapService mapService)
         {
             _MapService = mapService;
+            
         }
         // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
+
+
         [HttpPost]
-        public ActionResult<Map> Post(Map map)
+        public ActionResult Post(Map map)
         {
-            var map_create =_MapService.Create(map);
+            /*var map_create =_MapService.Create(map);
             if(map_create == null)
             {
                 return NoContent();
@@ -30,7 +35,9 @@ namespace CodeBattle.Controllers
             else
             {
                 return map;
-            }
+            }*/
+       
+            return Json(map);
         }
 
         [HttpGet("{index:max(50)}")]
