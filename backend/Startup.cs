@@ -11,6 +11,7 @@ using CodeBattle.PointWar.Server.Models;
 using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Services;
 using CodeBattle.PointWar.Server.Interfaces;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace CodeBattle.PointWar.Server
 {
