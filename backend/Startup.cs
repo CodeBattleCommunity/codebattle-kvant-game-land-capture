@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Services;
 using CodeBattle.PointWar.Server.Interfaces;
 using CodeBattle.PointWar.Server.Controllers;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace CodeBattle.PointWar.Server
 {
@@ -42,12 +43,12 @@ namespace CodeBattle.PointWar.Server
       });
 
       services.AddCors(options => options.AddPolicy("CorsPolicy",
-      builder =>
-      {
-        builder.AllowAnyMethod().AllowAnyHeader()
-                     .WithOrigins("http://localhost:5001")
-                     .AllowCredentials();
-      }));
+        builder =>
+        {
+          builder.AllowAnyMethod().AllowAnyHeader()
+                      .WithOrigins("http://localhost:80")
+                      .AllowCredentials();
+        }));
 
       // Инициализация сервиса SignalR
       services.AddSignalR(hubOptions =>
@@ -72,13 +73,11 @@ namespace CodeBattle.PointWar.Server
       {
         app.UseExceptionHandler("/Error");
         app.UseHsts();
-        app.UseHttpsRedirection();
+        //app.UseHttpsRedirection();
       }
 
       app.UseStaticFiles();
-      app.UseSpaStaticFiles();
-
-      app.UseHttpsRedirection();
+      app.UseSpaStaticFiles();      
       app.UseCookiePolicy();
       app.UseCors("CorsPolicy");
 
@@ -100,14 +99,20 @@ namespace CodeBattle.PointWar.Server
               });
       });
 
+      //спецаильно, чтобы работало с обратным прокси под nginx
+      app.UseForwardedHeaders(new ForwardedHeadersOptions
+      {
+          ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+      });
+
       app.UseSpa(spa =>
       {
         spa.Options.SourcePath = "wwwroot";
 #if DEBUG
         if (env.IsDevelopment())
         {
-          //spa.UseVueCli(npmScript: "serve", port: 8080, regex: "Compiled ");
-          spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
+          spa.UseVueCli(npmScript: "serve", port: 80, regex: "Compiled ");
+          //spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
         }
 #endif
       });

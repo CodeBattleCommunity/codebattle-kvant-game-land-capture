@@ -13020,30 +13020,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LocalAdmin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/home/apostol/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LocalAdmin\\source\\repos\\CodeBattle\\CodeBattle\\CodeBattle.csproj",
+      "projectUniqueName": "/media/apostol/3a6ab823-3454-4cd5-a3db-297bb78776fd/projects/codebattle-kvant-game-land-capture.1/CodeBattle/CodeBattle/CodeBattle.csproj",
       "projectName": "CodeBattle",
-      "projectPath": "C:\\Users\\LocalAdmin\\source\\repos\\CodeBattle\\CodeBattle\\CodeBattle.csproj",
-      "packagesPath": "C:\\Users\\LocalAdmin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LocalAdmin\\source\\repos\\CodeBattle\\CodeBattle\\obj\\",
+      "projectPath": "/media/apostol/3a6ab823-3454-4cd5-a3db-297bb78776fd/projects/codebattle-kvant-game-land-capture.1/CodeBattle/CodeBattle/CodeBattle.csproj",
+      "packagesPath": "/home/apostol/.nuget/packages/",
+      "outputPath": "/media/apostol/3a6ab823-3454-4cd5-a3db-297bb78776fd/projects/codebattle-kvant-game-land-capture.1/CodeBattle/CodeBattle/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\LocalAdmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/apostol/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
