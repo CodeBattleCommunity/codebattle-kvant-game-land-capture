@@ -41,12 +41,12 @@ namespace CodeBattle.PointWar.Server
       });
 
       services.AddCors(options => options.AddPolicy("CorsPolicy",
-      builder =>
-      {
-        builder.AllowAnyMethod().AllowAnyHeader()
-                     .WithOrigins("http://localhost:80")
-                     .AllowCredentials();
-      }));
+        builder =>
+        {
+          builder.AllowAnyMethod().AllowAnyHeader()
+                      .WithOrigins("http://localhost:80")
+                      .AllowCredentials();
+        }));
 
       // Инициализация сервиса SignalR
       services.AddSignalR(hubOptions =>
@@ -71,13 +71,11 @@ namespace CodeBattle.PointWar.Server
       {
         app.UseExceptionHandler("/Error");
         app.UseHsts();
-        app.UseHttpsRedirection();
+        //app.UseHttpsRedirection();
       }
 
       app.UseStaticFiles();
-      app.UseSpaStaticFiles();
-
-      app.UseHttpsRedirection();
+      app.UseSpaStaticFiles();      
       app.UseCookiePolicy();
       app.UseCors("CorsPolicy");
 
@@ -97,6 +95,12 @@ namespace CodeBattle.PointWar.Server
                       // Настраивает транспорт WebSocket.
                       options.Transports = HttpTransportType.LongPolling | HttpTransportType.WebSockets;
               });
+      });
+
+      //спецаильно, чтобы работало с обратным прокси под nginx
+      app.UseForwardedHeaders(new ForwardedHeadersOptions
+      {
+          ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
       });
 
       app.UseSpa(spa =>
