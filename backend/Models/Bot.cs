@@ -9,8 +9,5 @@ namespace CodeBattle.PointWar.Server.Models
         public int X_Bot { get; set; }
         public int Y_Bot { get; set; }
         public string PlayerID { get; set; }
-
-        Block BlockCoord = new Block();
-        Point PointCoord = new Point();
     }
 }

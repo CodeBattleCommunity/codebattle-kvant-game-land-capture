@@ -15,7 +15,6 @@ namespace CodeBattle.PointWar.Server.Models
 
         public string Serialize;
 
-
         public bool IsPoint(int y_point, int x_point)
         {
             if (y_point == Y_Point || x_point == X_Point) return true;

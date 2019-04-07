@@ -1,11 +1,15 @@
-﻿using CodeBattle.PointWar.Server.Models;
-using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
+using CodeBattle.PointWar.Server.Models;
+using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
 
-namespace CodeBattle.Services
+namespace CodeBattle.PointWar.Server.Services
 {
     public class BotCommands : Bot
     {
+        Block BlockCoord = new Block();
+        Point PointCoord = new Point();
+        
         /// <summary>
         /// Go to Up
         /// </summary>
@@ -23,10 +27,12 @@ namespace CodeBattle.Services
             {
                 bot.Y_Bot--;
                 await Clients.Caller.SendAsync("Up", bot); // Send to clint
+                await Clients.All.SendAsync("UpFront", bot); // Send to Front - end
             }
             else
             {
                 await Clients.Caller.SendAsync("Up", bot); // Send to clint
+                await Clients.All.SendAsync("UpFront", bot); // Send to Front - end
             }
         }
 
@@ -47,10 +53,12 @@ namespace CodeBattle.Services
             {
                 bot.Y_Bot++;
                 await Clients.Caller.SendAsync("Down", bot); // Send to clint
+                await Clients.All.SendAsync("DownFront", bot); // Send to Front - end
             }
             else
             {
                 await Clients.Caller.SendAsync("Down", bot); // Send to clint
+                await Clients.All.SendAsync("DownFront", bot); // Send to Front - end
             }
         }
 
@@ -71,10 +79,12 @@ namespace CodeBattle.Services
             {
                 bot.X_Bot--;
                 await Clients.Caller.SendAsync("Left", bot); // Send to clint
+                await Clients.All.SendAsync("LeftFront", bot); // Send to Front-end
             }
             else
             {
                 await Clients.Caller.SendAsync("Left", bot); // Send to clint
+                await Clients.All.SendAsync("LeftFront", bot); // Send to Front-end
             }
         }
 
@@ -95,10 +105,12 @@ namespace CodeBattle.Services
             {
                 bot.Y_Bot++;
                 await Clients.Caller.SendAsync("Right", bot); // Send to clint
+                await Clients.All.SendAsync("RightFront", bot); // Send to Front-end
             }
             else
             {
                 await Clients.Caller.SendAsync("Right", bot); // Send to clint
+                await Clients.All.SendAsync("RightFront", bot); // Send to Front-end
             }
         }
 
@@ -114,11 +126,13 @@ namespace CodeBattle.Services
             point.Y_Point = _point.Y_Point;
             point.PlayerID = _point.PlayerID;
 
-            // Check point, after send "bot"
+            // Check point, after send "point"
             if (PointCoord.IsPoint(point.Y_Point, point.Y_Point) == false)
             {
-                await Clients.Caller.SendAsync("Right", bot); // Send to clint
-                Point.Serialize = JsonConvert.SerializeObject(point); // Add point in JSON
+                // Send to clint
+                await Clients.Caller.SendAsync("AddPoint", JsonConvert.SerializeObject(point));
+                // Send to Front-end
+                await Clients.Caller.SendAsync("AddPointFront", JsonConvert.SerializeObject(point));
             }
         }
     }
