@@ -11,8 +11,8 @@ var canvasHeight = canvas.height;
 var canvasWidth = canvas.width;
 var dot = [];
 var defaultColor='green';
-var capturedByPlayer1Color='#000000';
-var capturedByPlayer2Color='#00FF00';
+var capturedByPlayer1Color='red';
+var capturedByPlayer2Color='blue';
 for(var c=0; c<dotsColumn; c++) {
     dot[c] = [];
     for(var r=0; r<dotsRow; r++) {
@@ -28,26 +28,26 @@ for(var c=0; c<dotsColumn; c++) {
 
 function drawTable() //creates a net of lines 
 {
-	for (r=0;r<dotsRow;r+=1)
+	for (c=0;c<dotsColumn;c+=1)
 	{$('canvas').drawLine(
-	{   //draw horizontal line
+	{   //draw vertical line
 				strokeStyle: 'black',
 				layer: true,
 				strokeWidth: lineWidth,
-				x1: r*dotSpacing + xPadding, y1: yPadding,
-				x2: r*dotSpacing + xPadding, y2: canvasHeight - yPadding
+				x1: c*dotSpacing + xPadding, y1: yPadding,
+				x2: c*dotSpacing + xPadding, y2: yPadding + dotSpacing*(dotsRow-1)
 	});
 	};
 
-		for (c=0;c<dotsColumn;c+=1)
+		for (r=0;r<dotsRow;r+=1)
 		{
 			$('canvas').drawLine(
-			{  //draw vertical line
+			{  //draw horizontal line
 			strokeStyle: 'black',
 				strokeWidth: lineWidth,
 				layer:true,
-				x1: xPadding, y1: c*dotSpacing + yPadding,
-			x2: canvasWidth - xPadding, y2: c*dotSpacing + yPadding
+				x1: xPadding, y1: r*dotSpacing + yPadding,
+			x2: xPadding + dotSpacing*(dotsColumn-1), y2: r*dotSpacing + yPadding
 			});
 		}
 }
@@ -112,4 +112,5 @@ function drawDots()  //creates dots in their positions defined in (dots) array
 		} //for(r) end
 	} //for(c) end
 }//function end
-//Плагиат!
+drawTable();
+drawDots();
