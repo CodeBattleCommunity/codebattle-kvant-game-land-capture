@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   container.innerHTML = ''
   // Sort the array from highest to lowest
   elements.sort((a, b) => b.querySelector('.score').textContent - a.querySelector('.score').textContent)
-  // Put the elements back into the container
+  // Put the elements back into the container -
   elements.forEach(e => container.appendChild(e))
 })
