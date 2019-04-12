@@ -15,10 +15,21 @@ namespace CodeBattle.PointWar.Server.Models
 
         public string Serialize;
 
+        public Point(int y, int x)
+        {
+            this.Y_Point = y;
+            this.X_Point = x;
+        }
+
         public bool IsPoint(int y_point, int x_point)
         {
             if (y_point == Y_Point || x_point == X_Point) return true;
             return false;
         }
+    }
+    
+    enum PointState
+    {
+        Free, Blocked
     }
 }
