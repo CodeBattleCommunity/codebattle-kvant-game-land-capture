@@ -40,7 +40,7 @@ namespace CodeBattle.Services
         {
             try
             {
-                return _Map.Find(map => map.Index == index).FirstOrDefault();
+                return _Map.Find(map => map.Id == index).FirstOrDefault();
             }
             catch
             {

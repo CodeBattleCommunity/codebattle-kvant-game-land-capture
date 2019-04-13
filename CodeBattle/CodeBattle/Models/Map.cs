@@ -18,8 +18,8 @@ namespace CodeBattle.Models
         public int Width { get; set; }
         
         [BsonId]
-        [JsonProperty("index")]
-        public int Index { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         [BsonElement("Link")]
         [JsonProperty("link")]
@@ -27,6 +27,6 @@ namespace CodeBattle.Models
 
         [BsonElement("Ignore_Point")]
         [JsonProperty("ignore_point")]
-        public Dictionary<int, double> Point { get; set; }
+        public Dictionary<int, int> Point { get; set; }
     }
 }
