@@ -1,0 +1,14 @@
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.csprojResolveAssemblyReference.cache
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.RazorAssemblyInfo.cache
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.RazorAssemblyInfo.cs
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.AssemblyInfo.cs
+C:\Users\student\source\repos\_CodeBattle\bin\Debug\netcoreapp2.2\_CodeBattle.deps.json
+C:\Users\student\source\repos\_CodeBattle\bin\Debug\netcoreapp2.2\_CodeBattle.runtimeconfig.json
+C:\Users\student\source\repos\_CodeBattle\bin\Debug\netcoreapp2.2\_CodeBattle.runtimeconfig.dev.json
+C:\Users\student\source\repos\_CodeBattle\bin\Debug\netcoreapp2.2\_CodeBattle.dll
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.RazorTargetAssemblyInfo.cache
+C:\Users\student\source\repos\_CodeBattle\bin\Debug\netcoreapp2.2\_CodeBattle.pdb
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.dll
+C:\Users\student\source\repos\_CodeBattle\obj\Debug\netcoreapp2.2\_CodeBattle.pdb
