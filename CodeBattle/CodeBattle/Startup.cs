@@ -39,7 +39,7 @@ namespace CodeBattle
             {
                 options.Connection_str = "mongodb://localhost:27017";
             });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<MapService>();
             services.AddScoped<ICodeBattle<Player>, PlayerService>();
             services.AddScoped<ICodeBattle<User>, RegService>();

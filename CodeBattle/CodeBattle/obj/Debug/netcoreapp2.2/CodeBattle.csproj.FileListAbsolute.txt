@@ -38,4 +38,21 @@ F:\GIT\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcor
 F:\GIT\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorTargetAssemblyInfo.cache
 F:\GIT\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.dll
 F:\GIT\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.pdb
+<<<<<<< HEAD
 F:\GIT\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.csprojAssemblyReference.cache
+=======
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.deps.json
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.runtimeconfig.json
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.runtimeconfig.dev.json
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.dll
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\bin\Debug\netcoreapp2.2\CodeBattle.pdb
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.csprojResolveAssemblyReference.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.csproj.CoreCompileInputs.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorAssemblyInfo.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorAssemblyInfo.cs
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.AssemblyInfoInputs.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.AssemblyInfo.cs
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.RazorTargetAssemblyInfo.cache
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.dll
+C:\Users\student\codebattle-kvant-game-land-capture\CodeBattle\CodeBattle\obj\Debug\netcoreapp2.2\CodeBattle.pdb
+>>>>>>> 5a10879df096154dbe648989da24bf1e065c9de4

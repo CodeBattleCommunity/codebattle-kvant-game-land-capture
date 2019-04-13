@@ -7,6 +7,7 @@ using System.Web;
 
 namespace CodeBattle.Models
 {
+    
     public class User
     {
         [BsonElement("Username")]
