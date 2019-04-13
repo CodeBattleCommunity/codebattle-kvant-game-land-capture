@@ -12,13 +12,16 @@ namespace CodeBattle.PointWar.Server.Models
         public string Color { get; set; }
         [JsonProperty("PlayerID")]
         public int PlayerID { get; set; }
+        [JsonProperty("Active")]
+        public bool Active { get; set; }
 
-        public string Serialize;
+        public string Serialize { get; set; }
 
-        public Point(int y, int x)
+        public Point(int y, int x, string id)
         {
             this.Y_Point = y;
             this.X_Point = x;
+            this.PlayerID = id;
         }
 
         public bool IsPoint(int y_point, int x_point)
@@ -26,10 +29,5 @@ namespace CodeBattle.PointWar.Server.Models
             if (y_point == Y_Point || x_point == X_Point) return true;
             return false;
         }
-    }
-    
-    enum PointState
-    {
-        Free, Blocked
     }
 }

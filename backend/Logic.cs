@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Models;
 
 namespace CodeBattle.PointWar.Server
@@ -8,8 +7,8 @@ namespace CodeBattle.PointWar.Server
         Map _map = new Map();
 
         // Map size
-        public static int Height = 0;
-        public static int Width = 0;
+        public static int Height = _map.Height;
+        public static int Width = _map.Width;
 
         public readonly CellState[,] cells = new CellState[Height, Width]; // Matrix
 
@@ -29,10 +28,10 @@ namespace CodeBattle.PointWar.Server
         /// </summary>
         public IEnumerable<Point> GetNeighbors(Point p)
         {
-            yield return new Point(p.Y_Point - 1, p.X_Point);
-            yield return new Point(p.Y_Point, p.X_Point - 1);
-            yield return new Point(p.Y_Point + 1, p.X_Point);
-            yield return new Point(p.Y_Point, p.X_Point + 1);
+            yield return new Point(p.Y_Point - 1, p.X_Point, p.PlayerID);
+            yield return new Point(p.Y_Point, p.X_Point - 1, p.PlayerID);
+            yield return new Point(p.Y_Point + 1, p.X_Point, p.PlayerID);
+            yield return new Point(p.Y_Point, p.X_Point + 1, p.PlayerID);
         }
 
         /// <summary>
@@ -59,7 +58,6 @@ namespace CodeBattle.PointWar.Server
         /// </summary>
         private HashSet<Point> GetClosedArea(Point pos, CellState myState)
         {
-            //ищем рекурсивным алгоритмом заливки
             var stack = new Stack<Point>();
             var visited = new HashSet<Point>();
             stack.Push(pos);
@@ -73,15 +71,27 @@ namespace CodeBattle.PointWar.Server
                     return null;
                 // Enum neighbors
                 foreach (var n in GetNeighbors(p))
+                {
                     if (this[n] != myState)
+                    {
                         if (!visited.Contains(n))
                         {
                             visited.Add(n);
                             stack.Push(n);
                         }
+                    }
+                }
             }
 
             return visited;
+        }
+
+        public async Task Json(Point _serialize)
+        {
+            Point serialize = JsonConvert.DeserializeObject<Point>(_serialize.Serialize);
+            var busyPoints = GetClosedArea(serialize);
+
+            await Client.All.SendAsync("BusyPoints", busyPoints);
         }
     }
 

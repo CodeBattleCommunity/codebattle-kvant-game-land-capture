@@ -51,7 +51,8 @@ namespace CodeBattle.PointWar.Server.Services
                 bot.Y_Bot++;
                 await Clients.All.SendAsync("DownFront", bot); // Send to Front - end
                 await Clients.Caller.SendAsync("Down", bot); // Send to clint
-                
+
+                Console.WriteLine($"Bot ({bot.PlayerID}) - moved down ");
             }
             else
             {
@@ -77,6 +78,8 @@ namespace CodeBattle.PointWar.Server.Services
                 bot.X_Bot--;
                 await Clients.All.SendAsync("LeftFront", bot); // Send to Front-end
                 await Clients.Caller.SendAsync("Left", bot); // Send to clint
+
+                Console.WriteLine($"Bot ({bot.PlayerID}) - moved left ");
             }
             else
             {
@@ -102,6 +105,8 @@ namespace CodeBattle.PointWar.Server.Services
                 bot.Y_Bot++;
                 await Clients.All.SendAsync("RightFront", bot); // Send to Front-end
                 await Clients.Caller.SendAsync("Right", bot); // Send to clint
+
+                Console.WriteLine($"Bot ({bot.PlayerID}) - moved right ");
             }
             else
             {
@@ -118,16 +123,18 @@ namespace CodeBattle.PointWar.Server.Services
         public async Task AddPoint(Point _point)
         {
             // New object
-            Point point = new Point(_point.Y_Point, _point.X_Point);
-            point.PlayerID = _point.PlayerID;
+            Point point = new Point(_point.Y_Point, _point.X_Point, _point.PlayerID);
 
             // Check point, after send "point"
             if (point.IsPoint(point.Y_Point, point.Y_Point) == false)
             {
+                point.Serialize = JsonConvert.SerializeObject(point);
                 // Send to clint
-                await Clients.Caller.SendAsync("AddPoint", JsonConvert.SerializeObject(point));
+                await Clients.Caller.SendAsync("AddPoint", point);
                 // Send to Front-end
-                await Clients.Caller.SendAsync("AddPointFront", JsonConvert.SerializeObject(point));
+                await Clients.Caller.SendAsync("AddPointFront", point);
+
+                Console.WriteLine($"Bot ({bot.PlayerID}) - add point [{point.X_Point}; {point.Y_Point}]");
             }
         }
     }
