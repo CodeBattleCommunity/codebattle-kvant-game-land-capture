@@ -80,7 +80,7 @@ table.reg{
 }
 tr{
 	background: #00cc7a;
-	color: #660066;
+	color: #0073e6;
 	font-family: Segoe Print;
 }
 tr.main{
@@ -91,11 +91,52 @@ div#password
 {
     position: absolute;
 }
-a{
-	color: red;
-	text-decoration: none; 
-}
+
 div{
 	color: white;
 	
+}
+a.footer{
+	color:red;
+	text-decoration: none;
+}
+
+a.button-container  {
+  text-decoration: none;
+  outline: none;
+  color: #ffcc66;
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  margin: 10px 20px;   
+  font-family: Segoe Script;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: .8s cubic-bezier(.165,.84,.44,1);
+  background:#ff0066;
+}
+a.button-container :before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: .8s cubic-bezier(.165,.84,.44,1);
+}
+a:hover {
+	background: rgba(51,102,255,1);
+		cursor: pointer;
+	}
+a:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
 }
