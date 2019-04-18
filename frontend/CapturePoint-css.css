@@ -60,8 +60,8 @@
 }*/
 h1.heading{
 	font-size: 720%;
-	color: #00b386;
-	font-family: Mistral;
+	color: #00FA9A;
+	font-family: Comic Sans MS;
 }
 footer{
 	position: fixed; 
@@ -72,7 +72,7 @@ footer{
     width: 100%; 
 }
 p{
-	color: yellow;
+	color: #9933ff;
 	font-family: Comic Sans MS;
 }
 table.reg{
@@ -80,7 +80,7 @@ table.reg{
 }
 tr{
 	background: #00cc7a;
-	color: #0073e6;
+	color: yellow;
 	font-family: Segoe Print;
 }
 tr.main{
@@ -99,8 +99,23 @@ div{
 a.footer{
 	color:red;
 	text-decoration: none;
+	font-size: 12px;
+    background: rgba(51,102,255,0);
 }
-
+a.footer:hover{
+	color:red;
+	text-decoration: none;
+	font-size: 12px;
+    background: rgba(51,102,255,0);
+}
+a.link{
+	color:#00cc99;
+	text-decoration: none;
+}
+a.link:hover{
+	color:#ff5050;
+	background: rgba(51,102,255,0);
+}
 a.button-container  {
   text-decoration: none;
   outline: none;
@@ -131,7 +146,7 @@ a.button-container :before {
   background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
   transition: .8s cubic-bezier(.165,.84,.44,1);
 }
-a.button-container:hover {
+a:hover {
 	background: rgba(51,102,255,1);
 		cursor: pointer;
 	}
@@ -139,14 +154,4 @@ a:hover:before {
   bottom: 0%;
   top: auto;
   height: 100%;
-}
-a.link{
-	color:#ff5050;
-	text-decoration:none;
-}
-a.link:hover {
-	color: #ff00ff;
-}
-p.welcome{
-	color: #00cc7a;
 }
