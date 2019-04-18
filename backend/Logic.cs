@@ -1,4 +1,5 @@
 using CodeBattle.PointWar.Server.Models;
+using System.IO;
 
 namespace CodeBattle.PointWar.Server
 {
@@ -86,18 +87,22 @@ namespace CodeBattle.PointWar.Server
             return visited;
         }
 
-        public async Task Json(Point _serialize)
+        public async Task GetCloseArea()
         {
-            Point serialize = JsonConvert.DeserializeObject<Point>(_serialize.Serialize);
-            var busyPoints = GetClosedArea(serialize);
+            string File = "points.json";
 
-            await Client.All.SendAsync("BusyPoints", busyPoints);
+            if (!File.Exists(File))
+                File.Create(File);
+
+            Point _p = JsonConvert.DeserializeObject<Point>(File);
+
+            await Client.All.SendAsync("GetCloseArea", GetCloseArea(_p));
         }
     }
 
     // Cell Status
     public enum CellState
     {
-        Empty, Busy, OutOfField
+        Empty, OutOfField
     }
 }

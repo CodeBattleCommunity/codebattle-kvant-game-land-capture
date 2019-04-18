@@ -11,7 +11,7 @@ namespace CodeBattle.PointWar.Server.Models
         [JsonProperty("Color")]
         public string Color { get; set; }
         [JsonProperty("PlayerID")]
-        public int PlayerID { get; set; }
+        public string PlayerID { get; set; }
         [JsonProperty("Active")]
         public bool Active { get; set; }
 
