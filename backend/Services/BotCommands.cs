@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using CodeBattle.PointWar.Server.Models;
 using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace CodeBattle.PointWar.Server.Services
 {
@@ -138,7 +139,7 @@ namespace CodeBattle.PointWar.Server.Services
                 // Send to Front-end
                 await Clients.Caller.SendAsync("AddPointFront", point.X_Point, point.Y_Point, point.PlayerID);
 
-                Console.WriteLine($"Bot ({bot.PlayerID}) - add point [{point.X_Point}; {point.Y_Point}]");
+                Console.WriteLine($"Bot ({point.PlayerID}) - add point [{point.X_Point}; {point.Y_Point}]");
             }
         }
     }

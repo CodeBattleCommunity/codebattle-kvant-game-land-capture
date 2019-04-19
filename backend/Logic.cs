@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Models;
 using System.IO;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.SignalR;
 
 namespace CodeBattle.PointWar.Server
 {
-    public class Logic
+    public class Logic : Hub
     {
         Map _map = new Map();
 
@@ -91,12 +95,12 @@ namespace CodeBattle.PointWar.Server
         {
             string File = "points.json";
 
-            if (!File.Exists(File))
+            if (!File.Exist(File))
                 File.Create(File);
 
             Point _p = JsonConvert.DeserializeObject<Point>(File);
 
-            await Client.All.SendAsync("GetCloseArea", GetCloseArea(_p));
+            await Clients.All.SendAsync("GetCloseArea", GetCloseArea(_p));
         }
     }
 
