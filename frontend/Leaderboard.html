@@ -6,7 +6,20 @@
 	<title>Главная</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css.css">
-	<script src="Sort.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		let elements = [];
+		let container = document.querySelector('#content');
+		// Add each row to the array
+		container.querySelectorAll('.row').forEach(el => elements.push(el));
+		// Clear the container
+		container.innerHTML = '';
+		// Sort the array from highest to lowest
+		elements.sort((a, b) => b.querySelector('.score').textContent - a.querySelector('.score').textContent);
+		// Put the elements back into the container
+		elements.forEach(e => container.appendChild(e));
+		})
+	</script>
 	<!-- VUE
 		<script src="vueTest.vue"></script>
 	-->
@@ -23,7 +36,7 @@
             <h3>Главная</h3>
         </div></a>
         <a href="SignUp.html"><div id="point">
-            <h3>Регистрация </h3>
+            <h3>Регистрация</h3>
         </div></a>
         <a href=""><div id="point">
             <h3>Карты</h3>
@@ -55,5 +68,8 @@
 			<div class="name">Player7</div><div class="score">600</div>
 		</div>
 	</div>
+    <footer align="center">
+        <p>Izhevsk CodeBattle Kvantorium</p>
+    </footer>
 </body>
 </html>
