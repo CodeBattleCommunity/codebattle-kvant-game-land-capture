@@ -1,4 +1,4 @@
-/*body {
+body {
    background-color: black;
    
    background-image:
@@ -57,7 +57,7 @@
    to {
          background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
    }
-}*/
+}
 h1.heading{
 	font-size: 720%;
 	color: #00FA9A;
@@ -72,7 +72,7 @@ footer{
     width: 100%; 
 }
 p{
-	color: yellow;
+	color: #00b359;
 	font-family: Comic Sans MS;
 }
 table.reg{
@@ -80,7 +80,7 @@ table.reg{
 }
 tr{
 	background: #00cc7a;
-	color: #0073e6;
+	color: #e6e600;
 	font-family: Segoe Print;
 }
 tr.main{
@@ -99,6 +99,7 @@ div{
 a.footer{
 	color:red;
 	text-decoration: none;
+	background: none;
 }
 
 a.button-container  {
@@ -131,7 +132,7 @@ a.button-container :before {
   background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
   transition: .8s cubic-bezier(.165,.84,.44,1);
 }
-a:hover {
+a.button-container:hover {
 	background: rgba(51,102,255,1);
 		cursor: pointer;
 	}
@@ -139,4 +140,13 @@ a:hover:before {
   bottom: 0%;
   top: auto;
   height: 100%;
+}
+a.link{
+	color: #0099ff;
+	text-decoration: none;
+}
+a.link:hover{
+	color: #cc0099;
+	text-decoration: none;
+	
 }
