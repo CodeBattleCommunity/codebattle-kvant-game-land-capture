@@ -343,3 +343,11 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
+CodeBattle/CodeBattle/obj/project.assets.json
+CodeBattle/CodeBattle/obj/Debug/netcoreapp2.2/CodeBattle.assets.cache
+CodeBattle/CodeBattle/obj/Debug/netcoreapp2.2/CodeBattle.csproj.CoreCompileInputs.cache
+CodeBattle/CodeBattle/obj/CodeBattle.csproj.nuget.cache
+CodeBattle/CodeBattle/obj/CodeBattle.csproj.nuget.g.props
+CodeBattle/CodeBattle/obj/CodeBattle.csproj.nuget.g.targets
+CodeBattle/CodeBattle/obj/project.assets.json
+backend/package-lock.json

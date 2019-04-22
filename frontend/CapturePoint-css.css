@@ -60,8 +60,8 @@ body {
 }
 h1.heading{
 	font-size: 720%;
-	color: #00FA9A;
-	font-family: Comic Sans MS;
+	color: #00b386;
+	font-family: Mistral;
 }
 footer{
 	position: fixed; 
@@ -142,11 +142,12 @@ a:hover:before {
   height: 100%;
 }
 a.link{
+
 	color: #0099ff;
 	text-decoration: none;
 }
 a.link:hover{
 	color: #cc0099;
 	text-decoration: none;
-	
 }
+
