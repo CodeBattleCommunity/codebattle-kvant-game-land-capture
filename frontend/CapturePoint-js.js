@@ -26,8 +26,8 @@ $('#registration input[type=email]').on('blur', function () {
 });
 function Regist(){
 	var valid = true;
-	var email_length = document.oForm.email.value.length;
-	var index = 0;
+	//var email_length = document.oForm.email.value.length;
+	//var index = 0;
 	
 	if (document.oForm.elem1.value === "" || document.oForm.elem2.value === "" || document.oForm.email.value === ""){
 		alert("Пожалуйста, заполните все формы");
@@ -37,8 +37,10 @@ function Regist(){
 		alert("Пароли не совпадают!");
 		valid = false;
 	}
-	/*while (index < email_length){
-		
-	}*/
+	else if (document.oForm.elem1.value.length < 6 && document.oForm.elem2.value.length < 6){
+		alert("Пароль должен содержать не менее 6-ти символов");
+		valid = false;
+	}
+	
 	return valid;
 }
