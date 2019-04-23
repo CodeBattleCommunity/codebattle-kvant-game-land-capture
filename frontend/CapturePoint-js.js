@@ -44,3 +44,9 @@ function Regist(){
 	
 	return valid;
 }
+function Show ()
+{
+  var elem = document.getElementById('password'); 
+  if ( elem ) 
+    elem.style.display = "block";
+}
