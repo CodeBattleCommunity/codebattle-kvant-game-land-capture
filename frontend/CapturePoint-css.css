@@ -80,7 +80,7 @@ table.reg{
 }
 tr{
 	background: #00cc7a;
-	color: #e6e600;
+	color: yellow;
 	font-family: Segoe Print;
 }
 tr.main{
@@ -150,4 +150,10 @@ a.link:hover{
 	color: #cc0099;
 	text-decoration: none;
 }
-
+div.hidden{
+	display:none;
+}
+a.forgot{
+	text-decoration:none;
+	color:#0000ff;
+}
