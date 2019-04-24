@@ -67,13 +67,17 @@ namespace CodeBattle.PointWar.Server
             var visited = new HashSet<Point>();
             stack.Push(pos);
             visited.Add(pos);
+            var id = pos.PlayerID;
+            
             while (stack.Count > 0)
             {
                 var p = stack.Pop();
                 var state = this[p];
+                
                 // If go out to edge - return null
                 if (state == CellState.OutOfField)
                     return null;
+                
                 // Enum neighbors
                 foreach (var n in GetNeighbors(p))
                 {
@@ -86,21 +90,42 @@ namespace CodeBattle.PointWar.Server
                         }
                     }
                 }
+
+                foreach (var i in visited)
+                {
+                    var _id = i.PlayerID;
+                    
+                    if (_id != id)
+                    {
+                        DisablePoint(i);
+                    }
+                }
             }
 
             return visited;
         }
 
+        public void DisablePoint(Point format)
+        {
+            var deserialize = JsonConvert.DeserializeObject<Point>(format);
+            deserialize.Active = false;
+            
+            JsonConvert.SerializeObject(deserialize, Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Seng front-end Closed Area (list)
+        /// </summary>
         public async Task GetCloseArea()
         {
-            string File = "points.json";
+            string file = "points.json";
 
-            if (!File.Exist(File))
-                File.Create(File);
+            if (!File.Exists(file))
+                File.Create(file);
 
-            Point _p = JsonConvert.DeserializeObject<Point>(File);
+            Point _p = JsonConvert.DeserializeObject<Point>(File.ReadAllText(file));
 
-            await Clients.All.SendAsync("GetCloseArea", GetCloseArea(_p));
+            await Clients.All.SendAsync("GetCloseArea", GetClosedArea(_p));
         }
     }
 

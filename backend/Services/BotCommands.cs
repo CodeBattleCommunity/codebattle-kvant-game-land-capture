@@ -22,15 +22,19 @@ namespace CodeBattle.PointWar.Server.Services
             // Check blocks, after send "bot"
             if (block.IsBlock(bot.Y_Bot--, bot.X_Bot) == false)
             {
-                await Clients.Caller.SendAsync("Up", bot.X_Bot, bot.Y_Bot--, bot.PlayerID); // Send to clint
-                await Clients.All.SendAsync("UpFront", bot.X_Bot, bot.Y_Bot--, bot.PlayerID); // Send to Front - end
+                // Send to clint
+                await Clients.Caller.SendAsync("Up", bot.X_Bot, bot.Y_Bot--, bot.PlayerID); 
+                // Send to Front - end
+                await Clients.All.SendAsync("UpFront", bot.X_Bot, bot.Y_Bot--, bot.PlayerID);
                 
                 Console.WriteLine($"Bot ({bot.PlayerID}) - moved up ");
             }
             else
             {
-                await Clients.Caller.SendAsync("Up", bot.X_Bot, bot.Y_Bot, bot.PlayerID); // Send to clint
-                await Clients.All.SendAsync("UpFront", bot.X_Bot, bot.Y_Bot, bot.PlayerID); // Send to Front - end
+                // Send to clint
+                await Clients.Caller.SendAsync("Up", bot.X_Bot, bot.Y_Bot, bot.PlayerID);
+                // Send to Front - end
+                await Clients.All.SendAsync("UpFront", bot.X_Bot, bot.Y_Bot, bot.PlayerID); 
                 
                 Console.WriteLine($"Bot ({bot.PlayerID}) - could not move");
             }
@@ -65,7 +69,7 @@ namespace CodeBattle.PointWar.Server.Services
         /// <summary>
         /// Go to left
         /// </summary>
-        public async Task Up(int x, int y, string id)
+        public async Task Left(int x, int y, string id)
         {
             // New object
             Bot bot = new Bot(y, x, id);
@@ -91,7 +95,7 @@ namespace CodeBattle.PointWar.Server.Services
         /// <summary>
         /// Go to Right
         /// </summary>
-        public async Task Up(int x, int y, string id)
+        public async Task Right(int x, int y, string id)
         {
             // New object
             Bot bot = new Bot(y, x, id);
@@ -121,20 +125,21 @@ namespace CodeBattle.PointWar.Server.Services
         {
             // New object
             Point point = new Point(y, x, id);
+            point.Active = true;
 
             // Check point, after send "point"
             if (point.IsPoint(point.Y_Point, point.X_Point) == false)
             {
                 // Check file
-                string File = "points.json";
+                string file = "points.json";
 
-                if (!File.Exists(File))
-                    File.Create(File);
+                if (!File.Exists(file))
+                    File.Create(file);
 
                 // Send to clint
                 await Clients.Caller.SendAsync("AddPoint", point.X_Point, point.Y_Point, point.PlayerID);
 
-                File.WriteAllText(File, JsonConvert.SerializeObject(point));
+                File.WriteAllText(file, JsonConvert.SerializeObject(point));
 
                 // Send to Front-end
                 await Clients.Caller.SendAsync("AddPointFront", point.X_Point, point.Y_Point, point.PlayerID);
