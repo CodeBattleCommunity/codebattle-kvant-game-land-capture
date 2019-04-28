@@ -5,7 +5,7 @@ $(document).ready(function() {
     $("div#password").height($("input").outerHeight(false)); 
     
     $("input").keypress(function() {
-        $("div#password").append("<img src=\"" + imgSrc + "\">");
+        $("div#password").append("<img src=\"" + this.imgSrc + "\">");
     });
     
     $("div#password").click(function() {
@@ -25,10 +25,28 @@ $('#registration input[type=email]').on('blur', function () {
   }
 });
 function Regist(){
-	var elem_1 = getElementsById(elem1);
-	var elem_2 = getElementsById(elem2);
-	var e_mail = getElementsById(email);
-	if (elem_1 === null || elem_2 === null || e_mail === null){
+	var valid = true;
+	//var email_length = document.oForm.email.value.length;
+	//var index = 0;
+	
+	if (document.oForm.elem1.value === "" || document.oForm.elem2.value === "" || document.oForm.email.value === ""){
 		alert("Пожалуйста, заполните все формы");
+		valid = false;
 	}
+	else if (document.oForm.elem1.value !== document.oForm.elem2.value){
+		alert("Пароли не совпадают!");
+		valid = false;
+	}
+	else if (document.oForm.elem1.value.length < 6 && document.oForm.elem2.value.length < 6){
+		alert("Пароль должен содержать не менее 6-ти символов");
+		valid = false;
+	}
+	
+	return valid;
+}
+function Show ()
+{
+  var elem = document.getElementById('password'); 
+  if ( elem ) 
+    elem.style.display = "block";
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace CodeBattle.PointWar.Server
 {
@@ -7,11 +8,17 @@ namespace CodeBattle.PointWar.Server
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            var configuration = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
+            CreateWebHostBuilder(args,  configuration)
+                .Build()
+                .Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args, IConfiguration configuration) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseConfiguration(configuration)
                 .UseStartup<Startup>();
     }
 }

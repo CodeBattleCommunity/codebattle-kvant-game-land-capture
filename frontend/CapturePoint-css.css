@@ -1,31 +1,159 @@
-body{
-	background:url(light-veneer.png) 100%;
+body {
+   background-color: black;
+   
+   background-image:
+      -moz-radial-gradient(circle, #FFFFFF 2px, rgba(248,255,128,.5) 4px, transparent 40px),
+      -moz-radial-gradient(circle, #FFFFFF 1px, rgba(255,186,170,.4) 3px, transparent 30px),
+      -moz-radial-gradient(ellipse, rgba(255,255,255,.9) 1px, rgba(251,255,186,.3) 2px, transparent 40px),
+      -moz-radial-gradient(ellipse, rgba(255,255,255,.4), rgba(253,255,219,.2) 1px, transparent 30px);
+
+   background-image:
+      -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 40, from(white), color-stop(0.1, rgba(248,255,128,.5)), to(transparent)),
+      -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 30, from(white), color-stop(0.1, rgba(255,186,170,.4)), to(transparent)),
+      -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 40, from(rgba(255,255,255,.9)), color-stop(0.05, rgba(251,255,186,.3)), to(transparent)),
+      -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 30, from(rgba(255,255,255,.4)), color-stop(0.03, rgba(253,255,219,.2)), to(transparent));
+   
+   background-size: 550px 550px, 350px 350px, 250px 270px, 220px 200px;
+   background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+   
+   animation-name: movement;
+   animation-duration: 5s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   
+   -moz-animation-name: movement;
+   -moz-animation-duration: 5s;
+   -moz-animation-timing-function: linear;
+   -moz-animation-iteration-count: infinite;
+   
+   -webkit-animation-name: movement;
+   -webkit-animation-duration: 5s;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: infinite;
+}
+@keyframes movement
+{
+   from {
+         background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+   }
+   to {
+         background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+   }
+}
+@-moz-keyframes movement
+{
+   from {
+         background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+   }
+   to {
+         background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+   }
+}
+@-webkit-keyframes movement
+{
+   from {
+         background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+   }
+   to {
+         background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+   }
 }
 h1.heading{
 	font-size: 720%;
-	color: #1A237E;
-	font-family: Comic Sans MS;
+	color: #00b386;
+	font-family: Mistral;
 }
 footer{
 	position: fixed; 
     left: 0; bottom: 0; 
     padding: 10px; 
     background: gray; 
-    color: #fff; 
+    color: #000000; 
     width: 100%; 
 }
 p{
-	color: green;
-	font-family: Arial;
+	color: #00b359;
+	font-family: Comic Sans MS;
 }
 table.reg{
-	
+	border-color: blue;
 }
 tr{
-	background: green;
+	background: #00cc7a;
 	color: yellow;
+	font-family: Segoe Print;
+}
+tr.main{
+	font-size: 200%;
+	font-family: Segoe Script;
 }
 div#password
 {
     position: absolute;
+}
+
+div{
+	color: white;
+	
+}
+a.footer{
+	color:red;
+	text-decoration: none;
+	background: none;
+}
+
+a.button-container  {
+  text-decoration: none;
+  outline: none;
+  color: #ffcc66;
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  margin: 10px 20px;   
+  font-family: Segoe Script;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: .8s cubic-bezier(.165,.84,.44,1);
+  background:#ff0066;
+}
+a.button-container :before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: .8s cubic-bezier(.165,.84,.44,1);
+}
+a.button-container:hover {
+	background: rgba(51,102,255,1);
+		cursor: pointer;
+	}
+a:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+a.link{
+
+	color: #0099ff;
+	text-decoration: none;
+}
+a.link:hover{
+	color: #cc0099;
+	text-decoration: none;
+}
+p.hidden{
+	display:none;
+}
+a.forgot{
+	text-decoration:none;
+	color:#0000ff;
 }

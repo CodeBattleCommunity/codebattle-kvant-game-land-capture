@@ -1,3 +1,4 @@
+// Generate API-key
 var url = 'api/v1/';
 
 function generateUUID() {
