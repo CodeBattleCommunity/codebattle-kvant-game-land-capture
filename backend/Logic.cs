@@ -9,7 +9,7 @@ namespace CodeBattle.PointWar.Server
 {
     public class Logic : Hub
     {
-        Map _map = new Map();
+        public static Map _map = new Map(/* Need coord */);
 
         // Map size
         public static int Height = _map.Height;
@@ -48,7 +48,7 @@ namespace CodeBattle.PointWar.Server
             // Enum empty points & go to edge
             foreach (var n in GetNeighbors(lastPoint))
             {
-                if (this[n] != myState)
+                if (this[n] != myState && lastPoint.Active == true)
                 {
                     // Find closed area
                     var list = GetClosedArea(n, myState);
@@ -107,10 +107,16 @@ namespace CodeBattle.PointWar.Server
 
         public void DisablePoint(Point format)
         {
-            var deserialize = JsonConvert.DeserializeObject<Point>(format);
-            deserialize.Active = false;
-            
-            JsonConvert.SerializeObject(deserialize, Formatting.Indented);
+            string obj = File.ReadAllText("points.json");
+
+            string str = JsonConvert.SerializeObject(format);
+
+            Point newobj = new Point(format.Y_Point, format.X_Point, format.PlayerID);
+            newobj.Active = false;
+            string newstr = JsonConvert.SerializeObject(newobj);
+
+            obj = obj.Replace(str, newstr);
+            File.WriteAllText("test.txt", obj);
         }
 
         /// <summary>
