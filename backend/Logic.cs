@@ -9,11 +9,13 @@ namespace CodeBattle.PointWar.Server
 {
     public class Logic : Hub
     {
-        public static Map _map = new Map(/* Need coord */);
+        public static Map _map = new Map(/* Need coord / constructor */);
 
         // Map size
         public static int Height = _map.Height;
         public static int Width = _map.Width;
+
+        private readonly IMongoCollection<Player> _Player;
 
         public readonly CellState[,] cells = new CellState[Height, Width]; // Matrix
 
@@ -98,6 +100,7 @@ namespace CodeBattle.PointWar.Server
                     if (_id != id)
                     {
                         DisablePoint(i);
+                        _Player.ReplaceOne(player => player.Score == Score++, pos);
                     }
                 }
             }
