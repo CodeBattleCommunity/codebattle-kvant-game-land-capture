@@ -10,8 +10,8 @@ namespace CodeBattle.PointWar.Server.Services
         public async Task SendEmail(string email, string subject, string message)
         {
             // From send message
-            string ConfigEmail = "egor.player360@gmail.com";
-            string ConfigPass = "m9*pYVd4V9Yn";
+            string ConfigEmail = "mail@server";
+            string ConfigPass = "password";
 
 
             var emailMessage = new MimeMessage();
@@ -32,21 +32,6 @@ namespace CodeBattle.PointWar.Server.Services
  
                 await client.DisconnectAsync(true);
             }
-        }
-
-        public string PassGenerate(){
-            string set = "abcdefghijklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ1234567890~`!@#№$;%^:&?*()-_=+/*-+,<>|.";
-            int len = set.Length;
-            int size = 16;
-            string pass = "";
-            Random rand = new Random();
-
-            for(int i = 0; i <= size; i++)
-            {
-                pass += set[rand.Next(len)];
-            }
-
-            return pass;
         }
     }
 }

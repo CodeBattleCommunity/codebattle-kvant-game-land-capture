@@ -19,12 +19,10 @@ namespace CodeBattle.PointWar.Server.Controllers
         public async Task<IActionResult> SendMessage(Player playerIn)
         {
             EmailService emailService = new EmailService();
-            string NewPass = emailService.PassGenerate();
+            string Pass = _Player.Find(playerIn => _Player.Password, playerIn).FirstOrDefault();
 
-            await emailService.SendEmail(playerIn.Email, "CodeBattle : Восстановление пароля", 
-            $"Ваш новый пароль : {NewPass}");
-
-            _Player.ReplaceOne(player => player.Password == NewPass, playerIn);
+            await emailService.SendEmail(playerIn.Email, "CodeBattle : Пароль", 
+            $"Ваш пароль : {Pass}");
 
             return RedirectToAction("Index");
         }
