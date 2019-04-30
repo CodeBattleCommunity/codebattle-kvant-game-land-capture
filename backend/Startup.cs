@@ -112,7 +112,7 @@ namespace CodeBattle.PointWar.Server
         if (env.IsDevelopment())
         {
           spa.UseVueCli(npmScript: "serve", port: 80, regex: "Compiled ");
-          //spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
+          spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
         }
 #endif
       });

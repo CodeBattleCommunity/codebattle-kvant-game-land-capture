@@ -16,13 +16,14 @@ namespace CodeBattle.PointWar.Server.Controllers
         private readonly IMongoCollection<Player> _Player;
 
         [HttpPut("{id:max(24)}")]
-        public async Task<IActionResult> SendMessage(Player playerIn)
+        public async Task<IActionResult> SendMessage(string email)
         {
             EmailService emailService = new EmailService();
-            string Pass = _Player.Find(playerIn => _Player.Password, playerIn).FirstOrDefault();
+            var filter = new BsonDocument("Email" , email);
+            var Pass = _Player.Find<Player>(filter).FirstOrDefault();
 
-            await emailService.SendEmail(playerIn.Email, "CodeBattle : Пароль", 
-            $"Ваш пароль : {Pass}");
+            await emailService.SendEmail(email, "CodeBattle : Пароль", 
+            $"Ваш пароль : {Pass.Password}");
 
             return RedirectToAction("Index");
         }

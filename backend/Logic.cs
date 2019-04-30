@@ -4,6 +4,8 @@ using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.SignalR;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace CodeBattle.PointWar.Server
 {
@@ -15,7 +17,7 @@ namespace CodeBattle.PointWar.Server
         public static int Height = _map.Height;
         public static int Width = _map.Width;
 
-        private readonly IMongoCollection<Player> _Player;
+        public readonly IMongoCollection<Player> _Player;
 
         public readonly CellState[,] cells = new CellState[Height, Width]; // Matrix
 
@@ -99,8 +101,12 @@ namespace CodeBattle.PointWar.Server
                     
                     if (_id != id)
                     {
+                        var filter = new BsonDocument("id", id);
+                        Player findScore = _Player.Find(filter).FirstOrDefault();
+                        findScore.Score++;
+
                         DisablePoint(i);
-                        _Player.ReplaceOne(player => player.Score == Score++, pos);
+                        _Player.ReplaceOne(filter, findScore);
                     }
                 }
             }
