@@ -1,3 +1,6 @@
+// Generate API-key
+var url = 'api/v1/';
+
 function generateUUID() {
     var d = new Date().getTime();
 
@@ -14,15 +17,15 @@ function generateUUID() {
     return uuid;
 }
 
-// Получение всех пользователей
+// Player list
 function GetUsers() {
     $.ajax({
-        url: '/api/players',
+        url: url,
         type: 'GET',
         contentType: "application/json",
     });
 }
-// Получение одного пользователя
+// One player
 function GetUser(id) {
     $.ajax({
         url: '/api/players/' + id,
@@ -31,10 +34,10 @@ function GetUser(id) {
     });
 }
 
-// Добавление пользователя
+// Register
 function CreateUser(userEmail, userPass) {
      $.ajax({
-         url: "api/players",
+         url: url,
          contentType: "application/json",
          method: "POST",
          data: JSON.stringify({
@@ -45,10 +48,10 @@ function CreateUser(userEmail, userPass) {
      })
 }
 
-// Изменение пользователя
+// Edit player
 function EditUser(userId, userEmail, userPass) {
     $.ajax({
-        url: "api/players",
+        url: url,
         contentType: "application/json",
         method: "PUT",
         data: JSON.stringify({
@@ -59,16 +62,16 @@ function EditUser(userId, userEmail, userPass) {
     })
 }
 
-// Удаление пользователя
+// Delete player
 function DeleteUser(id) {
     $.ajax({
-        url: "api/users/" + id,
+        url: url + id,
         contentType: "application/json",
         method: "DELETE",
     })
 }
 
-// Кнопка регистрации
+// Form submit
 $("form").submit(function (e) {
     e.preventDefault();
     var id = this.elements["id"].value;

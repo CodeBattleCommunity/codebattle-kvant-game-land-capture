@@ -27,5 +27,10 @@ namespace CodeBattle.PointWar.Server.Models
         [BsonElement("API_Key")]
         [JsonProperty("api_key")]
         public string API_Key { get; set; }
+
+       /* public Player(string id, string email, string pass, string score, string api)
+        {
+
+        }*/
     }
 }

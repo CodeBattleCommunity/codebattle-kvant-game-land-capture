@@ -11,6 +11,7 @@ using CodeBattle.PointWar.Server.Models;
 using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Services;
 using CodeBattle.PointWar.Server.Interfaces;
+using CodeBattle.PointWar.Server.Controllers;
 using Microsoft.AspNetCore.HttpOverrides;
 
 namespace CodeBattle.PointWar.Server
@@ -90,7 +91,7 @@ namespace CodeBattle.PointWar.Server
 
       app.UseSignalR(routes =>
       {
-        routes.MapHub<CommandHub>("/command",
+        routes.MapHub<BotCommands>("/command",
                   options =>
               {
                       // Настраивает транспорт WebSocket.
@@ -111,7 +112,7 @@ namespace CodeBattle.PointWar.Server
         if (env.IsDevelopment())
         {
           spa.UseVueCli(npmScript: "serve", port: 80, regex: "Compiled ");
-          //spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
+          spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
         }
 #endif
       });

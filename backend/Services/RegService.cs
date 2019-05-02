@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CodeBattle.PointWar.Server.Interfaces;
 using CodeBattle.PointWar.Server.Models;
 using Microsoft.AspNetCore.Mvc;

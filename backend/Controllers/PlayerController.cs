@@ -39,6 +39,7 @@ namespace CodeBattle.PointWar.Server.Controllers
         [HttpPost]
         public ActionResult<Player> Create(Player player)
         {
+            player.Score = 0;
             _PlayerService.Create(player);
 
             return player;
