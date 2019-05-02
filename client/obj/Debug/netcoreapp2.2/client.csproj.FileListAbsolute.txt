@@ -1,0 +1,11 @@
+c:\users\student\source\repos\client\bin\Debug\netcoreapp2.2\client.deps.json
+c:\users\student\source\repos\client\bin\Debug\netcoreapp2.2\client.runtimeconfig.json
+c:\users\student\source\repos\client\bin\Debug\netcoreapp2.2\client.runtimeconfig.dev.json
+c:\users\student\source\repos\client\bin\Debug\netcoreapp2.2\client.dll
+c:\users\student\source\repos\client\bin\Debug\netcoreapp2.2\client.pdb
+c:\users\student\source\repos\client\obj\Debug\netcoreapp2.2\client.csprojResolveAssemblyReference.cache
+c:\users\student\source\repos\client\obj\Debug\netcoreapp2.2\client.csproj.CoreCompileInputs.cache
+c:\users\student\source\repos\client\obj\Debug\netcoreapp2.2\client.AssemblyInfoInputs.cache
+c:\users\student\source\repos\client\obj\Debug\netcoreapp2.2\client.AssemblyInfo.cs
+c:\users\student\source\repos\client\obj\Debug\netcoreapp2.2\client.dll
+c:\users\student\source\repos\client\obj\Debug\netcoreapp2.2\client.pdb
