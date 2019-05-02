@@ -9,19 +9,15 @@ namespace CodeBattle.Controllers
     [Route("api-v1/[controller]")]
     public class PlayerController : Controller
     {
-        private readonly ICodeBattle<Player> _PlayerService;
+        private readonly ICodeBattle<Player> _PlayerService = new PlayerService();
 
-        public PlayerController(ICodeBattle<Player> playerService)
-        {
-            _PlayerService = playerService;
-        }
         [HttpGet]
         public ActionResult<List<Player>> Get()
         {
             return _PlayerService.Get();
         }
 
-        [HttpGet("{id:max(254)}")]
+        [HttpGet("{id:max(255)}")]
         public ActionResult<Player> Get(int id)
         {
             var player = _PlayerService.Get(id);
@@ -30,24 +26,16 @@ namespace CodeBattle.Controllers
             {
                 return NotFound();
             }
-            else
-            {
-                return player;
-            }
+
+            return player;
         }
 
         [HttpPost]
-        public ActionResult<Player> Post(Player player)
+        public ActionResult<Player> Create(Player player)
         {
-            var map_create = _PlayerService.Create(player);
-            if (map_create == null)
-            {
-                return NoContent();
-            }
-            else
-            {
-                return player;
-            }
+            _PlayerService.Create(player);
+
+            return player;
         }
 
         [HttpPut("{id:max(255)}")]
@@ -62,7 +50,7 @@ namespace CodeBattle.Controllers
 
             _PlayerService.Update(id, playerIn);
 
-            return Ok();
+            return NoContent();
         }
 
         [HttpDelete("{id:max(255)}")]
@@ -77,7 +65,7 @@ namespace CodeBattle.Controllers
 
             _PlayerService.Remove(player.ID);
 
-            return Ok();
+            return NoContent();
         }
     }
 }

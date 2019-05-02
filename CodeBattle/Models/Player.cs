@@ -6,7 +6,7 @@ namespace CodeBattle.Models
 {
     public class Player
     {
-        [BsonId]
+        [BsonElement("ID")]
         [JsonProperty("id")]
         public int ID { get; }
 

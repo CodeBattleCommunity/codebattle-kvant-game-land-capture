@@ -7,45 +7,32 @@ using MongoDB.Bson;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 using CodeBattle.Interfaces;
-using Microsoft.Extensions.Options;
-using CodeBattle.Models;
 
-namespace CodeBattle.Services
+namespace CodeBattle.Models
 {
+
+
     public class MapService
     {
         private IMongoCollection<Map> _Map;
 
-        public MapService(IOptions<_Options> config)
+        public MapService()
         {
-            MongoClient client = new MongoClient(config.Value.Connection_str);
+            string connectionString = new Startup().AppConfiguration["Connection"];
+            MongoClient client = new MongoClient(connectionString);
             IMongoDatabase database = client.GetDatabase("test");
             _Map = database.GetCollection<Map>("maps");
         }
 
         public Map Create(Map map)
         {
-            try
-            {
-                _Map.InsertOneAsync(map);
-                return map;
-            }
-            catch
-            {
-                return null;
-            }
+            _Map.InsertOneAsync(map);
+            return map;
         }
 
         public Map Get(int index)
         {
-            try
-            {
-                return _Map.Find(map => map.Index == index).FirstOrDefault();
-            }
-            catch
-            {
-                return null;
-            }
+            return _Map.Find(map => map.Index == index).FirstOrDefault();
         }
     }
 }

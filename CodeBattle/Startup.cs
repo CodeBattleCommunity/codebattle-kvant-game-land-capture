@@ -1,5 +1,4 @@
-﻿using CodeBattle.Interfaces;
-using CodeBattle.Models;
+﻿using CodeBattle.Models;
 using CodeBattle.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -19,11 +18,16 @@ namespace CodeBattle
     {
         public IConfiguration AppConfiguration { get; set; }
 
-        public Startup(IConfiguration configuration)
+        public Startup()
         {
-            AppConfiguration = configuration;
+            var builder = new ConfigurationBuilder()
+                .AddInMemoryCollection(new Dictionary<string, string>
+                {
+                    {"Connection", "mongodb://localhost:27017"},
+                });
+            AppConfiguration = builder.Build();
         }
-       
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting();
@@ -34,15 +38,7 @@ namespace CodeBattle
                 //(при ее возникновении)
                 hubOptions.EnableDetailedErrors = true;
             });
-            // конфигурация IOptions
-            services.Configure<_Options>(options =>
-            {
-                options.Connection_str = "mongodb://localhost:27017";
-            });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<MapService>();
-            services.AddScoped<ICodeBattle<Player>, PlayerService>();
-            services.AddScoped<ICodeBattle<User>, RegService>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -68,7 +64,13 @@ namespace CodeBattle
             {
                 routes.MapRoute(
                     name: "PlayerController",
-                    template: "{controller}/{id?}");
+                    template: "api-v1/{controller=Player}");
+                routes.MapRoute(
+                    name: "RegController",
+                    template: "api-v1/{controller=Reg}");
+                routes.MapRoute(
+                    name: "MapController",
+                    template: "api-v1/{controller=Map}");
             });
         }
     }

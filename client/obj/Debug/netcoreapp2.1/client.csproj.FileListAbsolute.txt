@@ -1,0 +1,10 @@
+G:\GIT\codebattle-kvant-game-land-capture\client\obj\Debug\netcoreapp2.1\client.csproj.CoreCompileInputs.cache
+G:\GIT\codebattle-kvant-game-land-capture\client\obj\Debug\netcoreapp2.1\client.AssemblyInfoInputs.cache
+G:\GIT\codebattle-kvant-game-land-capture\client\obj\Debug\netcoreapp2.1\client.AssemblyInfo.cs
+G:\GIT\codebattle-kvant-game-land-capture\client\bin\Debug\netcoreapp2.1\client.deps.json
+G:\GIT\codebattle-kvant-game-land-capture\client\bin\Debug\netcoreapp2.1\client.runtimeconfig.json
+G:\GIT\codebattle-kvant-game-land-capture\client\bin\Debug\netcoreapp2.1\client.runtimeconfig.dev.json
+G:\GIT\codebattle-kvant-game-land-capture\client\bin\Debug\netcoreapp2.1\client.dll
+G:\GIT\codebattle-kvant-game-land-capture\client\bin\Debug\netcoreapp2.1\client.pdb
+G:\GIT\codebattle-kvant-game-land-capture\client\obj\Debug\netcoreapp2.1\client.dll
+G:\GIT\codebattle-kvant-game-land-capture\client\obj\Debug\netcoreapp2.1\client.pdb

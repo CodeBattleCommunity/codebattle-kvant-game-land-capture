@@ -9,12 +9,7 @@ namespace CodeBattle.Controllers
     [Route("api-v1/[controller]")]
     public class RegController : Controller
     {
-        ICodeBattle<User> _RegService;
-
-        public RegController(ICodeBattle<User> userservice)
-        {
-            _RegService = userservice;
-        }
+        private readonly ICodeBattle<User> _RegService = new RegService();
 
         [HttpGet]
         public ActionResult<List<User>> Get()
@@ -31,10 +26,8 @@ namespace CodeBattle.Controllers
             {
                 return NotFound();
             }
-            else
-            {
-                return player;
-            }
+
+            return player;
         }
 
         [HttpPost]
@@ -72,7 +65,7 @@ namespace CodeBattle.Controllers
 
             _RegService.Remove(player.ID);
 
-            return Ok();
+            return NoContent();
         }
     }
 }

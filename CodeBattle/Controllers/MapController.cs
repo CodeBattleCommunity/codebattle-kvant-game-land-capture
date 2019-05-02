@@ -5,49 +5,32 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using CodeBattle.Models;
 using CodeBattle.Services;
+using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 namespace CodeBattle.Controllers
 {
     [Route("api-v1/[controller]")]
     public class MapController : Controller
     {
-        private readonly MapService _MapService;
+        private readonly MapService _MapService = new MapService();
 
-        public MapController(MapService mapService)
-        {
-            _MapService = mapService;
-        }
-        // TODO словарь некорректно(None) преобразуется в BsonElement когда отсылается в коллекцию
         [HttpPost]
-        public ActionResult Post(Map map)
+        public IActionResult CreateAction([FromBody]Map model)
         {
-            /*var map_create =_MapService.Create(map);
-            if(map_create == null)
-            {
-                return NoContent();
-            }
-            else
-            {
-                return map;
-            }
-            */
-            Console.WriteLine(map);
-            return Json(map);
+            _MapService.Create(model);
+            return Json(model);
         }
 
         [HttpGet("{index:max(50)}")]
         public ActionResult<Map> Get(int index)
         {
-            var map_get = _MapService.Get(index);
-            if (map_get == null || index == 0)
+            if (index == 0)
             {
                 return NoContent();
             }
-            else
-            {
-                return map_get;
-            }
+            return _MapService.Get(index);
         }
     }
 }
