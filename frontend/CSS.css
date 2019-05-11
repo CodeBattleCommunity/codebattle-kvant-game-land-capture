@@ -47,18 +47,31 @@ footer{
 	border: 1px outset black;
 	clear: left;
 }
+#cell {
+	border: 1px solid black;
+	padding-top: 5px;
+	text-align: center;
+	height: 450px;
+	width: 550px;
+	background-color: rgb(175, 175, 175);
+}
+#cell_img {
+	border: 2px solid black;
+	height: 350px;
+	width: 450px;
+}
 .row {
 	text-align: center;
 	position: relative;
 	display: block;
-	width: 80%;
+	width: 60%;
 	height: 40px;
 	border-bottom: 1px solid #AFAFAF;
 }
 .name {
 	position: relative;
 	display: inline-block;
-	width: 75%;
+	width: 60%;
 	line-height: 45px;
 }
 .score {
@@ -74,4 +87,3 @@ footer{
 }
 .row:nth-child(3) {
 	background: #a06427;
-}
