@@ -1,0 +1,72 @@
+<html>
+<title>Регистрация</title>
+<head>
+<link rel="stylesheet" type = "text/css" href = "CapturePoint-css.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" 
+          src="CapturePoint-js.js"></script>
+		  <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body>
+
+
+
+
+<table border="2" align = "center" width = "30%" height = "10%">
+<tr align = "center" class = "main">
+<td>Заполните  все  формы</td>
+</tr>
+</table>
+<table border="2" align = "center" width = "30%" height = "40%">
+<form name = "oForm">
+
+
+
+
+<tr>
+  <td>Введите Ваш e-mail</td>
+  <td>
+  <input type="email" name = "email" required>
+</td>
+</tr>
+<tr>
+<td>Пароль</td>
+<td>
+<input type="password" name = "elem1" required></td>
+</tr>
+<tr>
+<td>Подтвердите пароль</td>
+<td>
+<input type="password" name = "elem2" required></td></tr>
+<tr>
+<!--<td><input type = "reset" value = "Сбросить" onclick = "clearForm(oForm);"></td>-->
+<td><div class = "button-container"><a class = "button-container" onclick = "clearForm(oForm);">Сбросить</a></div></td>
+<td><a class = "button-container" onclick = "Regist();">Регистрация</a></td>
+</tr>
+<table border="2" align = "center" width = "30%" height = "10%">
+<tr><td align = "center"><a href = "registration.html" class = "forgot" onclick = "Show('password'); return false;">Забыли пароль?</a></td></tr>
+</table>
+<p id="password" class="hidden" align = "center">Введите номер телефона
+<form name = "phone">
+<input name="answer">
+<input type = "button" value = "Отправить" onclick = "Phone('phone'); return false"></form>
+</p>
+<p id="phone" class="hidden" align = "center" class = "hidden">Введите полученный код
+<form name = "phone" align = "center" id = "phone" >
+<input name="answer" id = "phone" class = "hidden">
+<input type = "button" value = "Отправить" id = "phone" class = "hidden" ></form></p>
+
+<table align = "center">
+<td align = "center"><img src = "tenor.gif" height = "100%"></td>
+</table>
+<footer>
+<a href="https://izhevskcodebattle.github.io/codebattle-kvant-game-land-capture/" class= "footer">&copy;codebattle_kvant</a>
+<script src = "https://bootstrap-ru.com/203/assets/js/bootstrap-modal.js"></script>
+<script type="text/javascript" 
+          src="reset.js"></script>
+</footer>
+</body>
+
+</html>
+

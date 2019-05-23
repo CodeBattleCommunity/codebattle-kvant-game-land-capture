@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="css.css">
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		let elements = [];
+		let container = document.querySelector('#content');
+		// Add each row to the array
+		container.querySelectorAll('.row').forEach(el => elements.push(el));
+		// Clear the container
+		container.innerHTML = '';
+		// Sort the array from highest to lowest
+		elements.sort((a, b) => b.querySelector('.score').textContent - a.querySelector('.score').textContent);
+		// Put the elements back into the container
+		elements.forEach(e => container.appendChild(e));
+		})
+	</script>
+	<!-- VUE
+		<script src="vueTest.vue"></script>
+	-->
+</head>
+<body>
+	<div id="header">
+        <h1 align="center">Land Capture</h1>
+    </div>
+    <div id="sidebar">
+        <a href=""><div id="point">
+            <h3>Правила</h3>
+        </div></a>
+        <a href="MainPage.html"><div id="point">
+            <h3>Главная</h3>
+        </div></a>
+        <a href="SignUp.html"><div id="point">
+            <h3>Регистрация</h3>
+        </div></a>
+        <a href=""><div id="point">
+            <h3>Карты</h3>
+        </div></a>
+        <a href=""><div id="point">
+            <h3>Игровое Поле</h3>
+        </div></a>
+	</div>
+	<div id="content">
+		<div class="row">
+			<div class="name">Player1</div><div class="score">100</div>
+		</div>
+		<div class="row">
+			<div class="name">Player2</div><div class="score">400</div>
+		</div>
+		<div class="row">
+			<div class="name">Player3</div><div class="score">200</div>
+		</div>
+		<div class="row">
+			<div class="name">Player4</div><div class="score">700</div>
+		</div>
+		<div class="row">
+			<div class="name">Player5</div><div class="score">300</div>
+		</div>
+		<div class="row">
+			<div class="name">Player6</div><div class="score">500</div>
+		</div>
+		<div class="row">
+			<div class="name">Player7</div><div class="score">600</div>
+		</div>
+	</div>
+    <footer align="center">
+        <p>Izhevsk CodeBattle Kvantorium</p>
+    </footer>
+</body>
+</html>
