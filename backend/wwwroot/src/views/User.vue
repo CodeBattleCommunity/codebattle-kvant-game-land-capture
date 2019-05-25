@@ -17,5 +17,5 @@ import UserInfo from "@/components/UserInfo.vue"; // @ is an alias to /src
     UserInfo
   }
 })
-export default class UserPage extends Vue {}
+export default class UserView extends Vue {}
 </script>

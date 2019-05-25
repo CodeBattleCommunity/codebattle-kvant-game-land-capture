@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <LoginForm></LoginForm>
+        Registartion
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -10,12 +10,5 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import LoginForm from "@/components/LoginForm.vue"; // @ is an alias to /src
-
-@Component({
-  components: {
-    LoginForm
-  }
-})
-export default class LoginView extends Vue {}
+export default class RegistrationView extends Vue {}
 </script>

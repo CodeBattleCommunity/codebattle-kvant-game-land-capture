@@ -49,10 +49,14 @@ export default class App extends Vue {
   private right: boolean = true;
   private title: string = "CodeBattle: PointWar";
   private items = [
-    { title: "Основная", icon: "home", link: "/" },
-    { title: "Счетчик", icon: "touch_app", link: "/counter" },
-    { title: "Пример запроса сервера", icon: "get_app", link: "/fetch-data" },
-    { title: "О нас", icon: "face", link: "/about" }
+    { title: "Home", icon: "home", link: "/" },
+    { title: "Counter", icon: "touch_app", link: "/counter" },
+    { title: "Data", icon: "get_app", link: "/fetch-data" },
+    { title: "Game", icon: "face", link: "/game" },
+    { title: "Leader Board", icon: "stars", link: "/leaderboard" },
+    { title: "Maps", icon: "room", link: "/maps" },
+    { title: "Registration", icon: "how_to_reg", link: "/registration" },
+    { title: "Rules", icon: "settings", link: "/rules" }
   ];
 }
 </script>
